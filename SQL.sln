@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSIS", "SSIS", "{ABDA3343-0DDF-496E-B254-AE2BC637F1D2}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSRS", "SSRS", "{B9FF4D43-99D6-46DB-9565-48D6082D040D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSAS", "SSAS", "{DC511013-1BF2-49FC-B561-07810266ED49}"
-EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
