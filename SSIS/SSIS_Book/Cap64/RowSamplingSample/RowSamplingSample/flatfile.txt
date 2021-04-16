@@ -1,0 +1,10 @@
+SPECD,Spécialités du monde,Dominique Perrier,Marketing Manager,25, rue Lauriston,Paris,,75016,France,(1) 47.55.60.10,(1) 47.55.60.20
+VINET,Vins et alcools Chevalier,Paul Henriot,Accounting Manager,59 rue de l'Abbaye,Reims,,51100,France,26.47.15.10,26.47.15.11
+QUEDE,Que Delícia,Bernardo Batista,Accounting Manager,Rua da Panificadora, 12,Rio de Janeiro,RJ,02389-673,Brazil,(21) 555-4252,(21) 555-4545
+AROUT,Around the Horn,Thomas Hardy,Sales Representative,120 Hanover Sq.,London,,WA1 1DP,UK,(171) 555-7788,(171) 555-6750
+FURIB,Furia Bacalhau e Frutos do Mar,Lino Rodriguez,Sales Manager,Jardim das rosas n. 32,Lisboa,,1675,Portugal,(1) 354-2534,(1) 354-2535
+FRANR,France restauration,Carine Schmitt,Marketing Manager,54, rue Royale,Nantes,,44000,France,40.32.21.21,40.32.21.20
+OTTIK,Ottilies Käseladen,Henriette Pfalzheim,Owner,Mehrheimerstr. 369,Köln,,50739,Germany,0221-0644327,0221-0765721
+FOLIG,Folies gourmandes,Martine Rancé,Assistant Sales Agent,184, chaussée de Tournai,Lille,,59000,France,20.16.10.16,20.16.10.17
+ROMEY,Romero y tomillo,Alejandra Camino,Accounting Manager,Gran Vía, 1,Madrid,,28001,Spain,(91) 745 6200,(91) 745 6210
+ERNSH,Ernst Handel,Roland Mendel,Sales Manager,Kirchgasse 6,Graz,,8010,Austria,7675-3425,7675-3426

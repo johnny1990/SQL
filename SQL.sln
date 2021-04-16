@@ -3,9 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSIS", "SSIS", "{63169141-DEF2-439E-A9D8-C3CD3C4086CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSRS", "SSRS", "{D1418A01-3887-40F2-8023-AD12139817E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSAS", "SSAS", "{388913BB-8485-4DE9-B0AA-8F678CCB70DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSIS_Book", "SSIS_Book", "{72311ADA-03B9-4F1D-9EB9-01AFF8C4C002}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "1_MyIntegration", "SSIS\SSIS_Book\Cap1\MyIntegration\MyIntegration\1_MyIntegration.dtproj", "{02A29E11-2521-41C1-9C0F-E863FC905A14}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "2_SQLtoEXCEL", "SSIS\SSIS_Book\Cap2\SQLtoEXCEL\SQLtoEXCEL\2_SQLtoEXCEL.dtproj", "{9D512266-9894-46C7-8F28-3DBD1FCA2E84}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02A29E11-2521-41C1-9C0F-E863FC905A14}.Development|Default.ActiveCfg = Development
+		{02A29E11-2521-41C1-9C0F-E863FC905A14}.Development|Default.Build.0 = Development
+		{9D512266-9894-46C7-8F28-3DBD1FCA2E84}.Development|Default.ActiveCfg = Development
+		{9D512266-9894-46C7-8F28-3DBD1FCA2E84}.Development|Default.Build.0 = Development
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{72311ADA-03B9-4F1D-9EB9-01AFF8C4C002} = {63169141-DEF2-439E-A9D8-C3CD3C4086CF}
+		{02A29E11-2521-41C1-9C0F-E863FC905A14} = {72311ADA-03B9-4F1D-9EB9-01AFF8C4C002}
+		{9D512266-9894-46C7-8F28-3DBD1FCA2E84} = {72311ADA-03B9-4F1D-9EB9-01AFF8C4C002}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
