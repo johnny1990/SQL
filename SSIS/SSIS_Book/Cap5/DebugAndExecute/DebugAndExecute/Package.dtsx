@@ -7,12 +7,12 @@
   DTS:CreatorName="MAN\MAN"
   DTS:DTSID="{A6FA1252-82B5-4C33-BAD7-3DB72F42152A}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.152"
+  DTS:LastModifiedProductVersion="15.0.2000.165"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{4F690D34-D370-4782-963A-6E8C970439E6}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{16A7CBC7-5644-4905-BAB1-FDC3D54970D1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -23,7 +23,9 @@
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Aplicatii VS\SSIS\SQL Server Integration Services (SSIS) –Step by Step Tutorial\Cap5\DebugAndExecute\DebugAndExecute\DestinationExcel.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectRetryCount="0"
+          DTS:ConnectRetryInterval="0"
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Aplicatii VS\SQL\SQL\SSIS\SSIS_Book\Cap5\DebugAndExecute\DebugAndExecute\DestinationExcel.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -39,7 +41,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="E:\Aplicatii VS\SSIS\SQL Server Integration Services (SSIS) –Step by Step Tutorial\Cap5\DebugAndExecute\DebugAndExecute\FlatFileDestination.txt">
+          DTS:ConnectionString="E:\Aplicatii VS\SQL\SQL\SSIS\SSIS_Book\Cap5\DebugAndExecute\DebugAndExecute\FlatFileDestination.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +49,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductID"
-              DTS:DTSID="{25731C89-00A5-443B-8A0E-259540DF2990}"
+              DTS:DTSID="{CCF208DC-B496-4876-8531-66FCF6F888D0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -56,7 +58,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="ProductName"
-              DTS:DTSID="{CC141BE7-7EE8-4BAB-B306-CE78459287D0}"
+              DTS:DTSID="{92651A7C-E1B2-4AD3-87C6-BB89944CCA6F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -64,7 +66,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="SupplierID"
-              DTS:DTSID="{F6185E04-1464-4F55-BE1C-AC7122CE598C}"
+              DTS:DTSID="{6A462CCA-10D8-41A1-AE23-77E91476081E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -72,7 +74,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="CategoryID"
-              DTS:DTSID="{66FC7916-FBC7-4278-8851-D625B71ED969}"
+              DTS:DTSID="{FFC9C33B-2978-43C4-9AC7-F5E9ED25C445}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -81,7 +83,7 @@
               DTS:DataType="130"
               DTS:TextQualified="True"
               DTS:ObjectName="QuantityPerUnit"
-              DTS:DTSID="{A8DAB365-CBCD-4E7E-8B5B-901F8BA0413D}"
+              DTS:DTSID="{2F02169A-C3BC-47D0-A711-4E58BDAE0919}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -89,7 +91,7 @@
               DTS:DataType="6"
               DTS:TextQualified="True"
               DTS:ObjectName="UnitPrice"
-              DTS:DTSID="{9E34CACD-CC7C-4EDA-9C5A-9C8537C15C62}"
+              DTS:DTSID="{97A3739B-F36E-4780-8CFA-2A3A262E28F6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -97,7 +99,7 @@
               DTS:DataType="2"
               DTS:TextQualified="True"
               DTS:ObjectName="UnitsInStock"
-              DTS:DTSID="{2C07E8B2-077A-439C-92D2-D46B367330C0}"
+              DTS:DTSID="{A1B3B387-DC3C-4A12-9B5C-4197340A21AC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -105,7 +107,7 @@
               DTS:DataType="2"
               DTS:TextQualified="True"
               DTS:ObjectName="UnitsOnOrder"
-              DTS:DTSID="{18FFD392-4428-4EB3-AB2A-322180D6D7C4}"
+              DTS:DTSID="{96A3067A-82CC-47D6-9E39-56811738EABF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -113,7 +115,7 @@
               DTS:DataType="2"
               DTS:TextQualified="True"
               DTS:ObjectName="ReorderLevel"
-              DTS:DTSID="{09BD4C08-E163-48BC-B2E2-B58BD66659FE}"
+              DTS:DTSID="{D891E69C-C10A-4A6B-82FF-7E9BE57767E1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -121,7 +123,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="Discontinued"
-              DTS:DTSID="{9A7B3491-964D-4FC6-A43C-A5B05407D5E4}"
+              DTS:DTSID="{CB1BC518-C179-4DE1-94DC-D092724B6DBC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -129,7 +131,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorCode"
-              DTS:DTSID="{68134C5F-2E7D-4DA3-B529-2F5250F42A1B}"
+              DTS:DTSID="{7E8D950A-6849-4060-B9F4-D0A7B9A339B6}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -137,7 +139,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ErrorColumn"
-              DTS:DTSID="{2AE58A2C-AEC4-426B-8EFB-CCCAB137D6EA}"
+              DTS:DTSID="{9C304FE8-6D49-4B79-9C87-5FEDA0331F06}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -150,6 +152,8 @@
       DTS:ObjectName="MAN.NORTHWIND">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=MAN;Initial Catalog=NORTHWIND;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -284,17 +288,17 @@
                       externalMetadataColumnId="Package\Data Flow Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[8]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitsOnOrder]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Excel Destination.Inputs[Excel Destination Input].Columns[ReorderLevel]"
-                      cachedDataType="i2"
-                      cachedName="ReorderLevel"
-                      externalMetadataColumnId="Package\Data Flow Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[9]"
-                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReorderLevel]" />
-                    <inputColumn
                       refId="Package\Data Flow Task\Excel Destination.Inputs[Excel Destination Input].Columns[Discontinued]"
                       cachedDataType="bool"
                       cachedName="Discontinued"
-                      externalMetadataColumnId="Package\Data Flow Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[10]"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[9]"
                       lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[Discontinued]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Excel Destination.Inputs[Excel Destination Input].Columns[ReorderLevel]"
+                      cachedDataType="i2"
+                      cachedName="ReorderLevel"
+                      externalMetadataColumnId="Package\Data Flow Task\Excel Destination.Inputs[Excel Destination Input].ExternalColumns[10]"
+                      lineageId="Package\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ReorderLevel]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -867,7 +871,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Data Flow Task"
           TopLeft="295.00000502382,110.117648603182" />
       </GraphLayout>
@@ -879,17 +883,17 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="264.285718786473,39.0000005469603" />
-        <NodeLayout
-          Size="171.2,41.6"
+          Size="171,42"
           Id="Package\Data Flow Task\Flat File Destination"
           TopLeft="392.14286382101,128.470590037046" />
         <NodeLayout
-          Size="159.2,41.6"
+          Size="159,42"
           Id="Package\Data Flow Task\Excel Destination"
           TopLeft="130.714287940337,130.764707716279" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="264.285718786473,39.0000005469603" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="339.085718786473,80.6000005469603">
@@ -964,7 +968,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
+    design-time-name="Package\Data Flow Task\Excel Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -977,7 +981,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Excel Destination">
+    design-time-name="Package\Data Flow Task\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

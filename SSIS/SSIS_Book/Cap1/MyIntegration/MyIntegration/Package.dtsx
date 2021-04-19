@@ -7,12 +7,12 @@
   DTS:CreatorName="MAN\MAN"
   DTS:DTSID="{699B69B0-1FED-4988-B995-5E1609BDF04F}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.152"
+  DTS:LastModifiedProductVersion="15.0.2000.165"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="2"
-  DTS:VersionGUID="{0672F0EE-BAF2-480B-AD65-E0F7402E4178}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{4A42CD63-D106-47AD-A749-ED845BBF9DFC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -30,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="E:\Aplicatii VS\SSIS\SQL Server Integration Services (SSIS) –Step by Step Tutorial\Cap1\MyIntegration\FlatFile.txt">
+          DTS:ConnectionString="E:\Aplicatii VS\SQL\SQL\SSIS\SSIS_Book\Cap1\MyIntegration\FlatFile.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="1  2"
-              DTS:DTSID="{8C5FFB78-DBE5-46CE-B46C-7F64CDAB167C}"
+              DTS:DTSID="{E1672D1D-A058-4293-BBA2-54150AAAAC08}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -52,6 +52,8 @@
       DTS:ObjectName="MAN.NORTHWIND">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=MAN;Initial Catalog=NORTHWIND;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -62,6 +64,8 @@
       DTS:ObjectName="MAN.NORTHWIND 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=MAN;Initial Catalog=NORTHWIND;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
@@ -317,7 +321,7 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Data Flow Task"
           TopLeft="302.857148014769,82.5882364523865" />
       </GraphLayout>
@@ -329,11 +333,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
+          Size="150,42"
           Id="Package\Data Flow Task\Flat File Source"
           TopLeft="284.285719127071,46.6470594777368" />
         <NodeLayout
-          Size="170.4,41.6"
+          Size="170,42"
           Id="Package\Data Flow Task\OLE DB Destination"
           TopLeft="273.571433230322,134.588237181667" />
         <EdgeLayout

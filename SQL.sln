@@ -15,6 +15,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "1_MyIntegration", "SSIS\SSI
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "2_SQLtoEXCEL", "SSIS\SSIS_Book\Cap2\SQLtoEXCEL\SQLtoEXCEL\2_SQLtoEXCEL.dtproj", "{9D512266-9894-46C7-8F28-3DBD1FCA2E84}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "5_DebugAndExecute", "SSIS\SSIS_Book\Cap5\DebugAndExecute\DebugAndExecute\5_DebugAndExecute.dtproj", "{65F44BE4-DE77-4BDB-B5A9-F87F0B7771E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -24,6 +26,8 @@ Global
 		{02A29E11-2521-41C1-9C0F-E863FC905A14}.Development|Default.Build.0 = Development
 		{9D512266-9894-46C7-8F28-3DBD1FCA2E84}.Development|Default.ActiveCfg = Development
 		{9D512266-9894-46C7-8F28-3DBD1FCA2E84}.Development|Default.Build.0 = Development
+		{65F44BE4-DE77-4BDB-B5A9-F87F0B7771E3}.Development|Default.ActiveCfg = Development
+		{65F44BE4-DE77-4BDB-B5A9-F87F0B7771E3}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +36,7 @@ Global
 		{72311ADA-03B9-4F1D-9EB9-01AFF8C4C002} = {63169141-DEF2-439E-A9D8-C3CD3C4086CF}
 		{02A29E11-2521-41C1-9C0F-E863FC905A14} = {72311ADA-03B9-4F1D-9EB9-01AFF8C4C002}
 		{9D512266-9894-46C7-8F28-3DBD1FCA2E84} = {72311ADA-03B9-4F1D-9EB9-01AFF8C4C002}
+		{65F44BE4-DE77-4BDB-B5A9-F87F0B7771E3} = {72311ADA-03B9-4F1D-9EB9-01AFF8C4C002}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
