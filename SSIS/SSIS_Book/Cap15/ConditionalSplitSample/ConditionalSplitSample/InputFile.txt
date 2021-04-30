@@ -1,5 +1,0 @@
-1, Application1, NEW, IT, India
-2, Application2, NEW, IT, India
-3, Application3, OLD, IT, India
-4, Application4, OLD, IT, India
-5, Application5, NEW, IT, India
