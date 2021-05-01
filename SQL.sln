@@ -15,6 +15,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Merge_Join_Concatenation", 
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Sync_Table_Join", "SSIS\Examples\Sync_Table_Join\Sync_Table_Join.dtproj", "{256D3DD7-561E-44E7-91E7-C67C318FCC46}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SQL_Transactions", "SSIS\Examples\SQL_Transactions\SQL_Transactions.dtproj", "{1D4CA0A3-94AA-42C1-BF21-060F9FC51C2C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -24,6 +26,8 @@ Global
 		{90F627DF-6B43-4FF0-A234-F0B42143BA08}.Development|Default.Build.0 = Development
 		{256D3DD7-561E-44E7-91E7-C67C318FCC46}.Development|Default.ActiveCfg = Development
 		{256D3DD7-561E-44E7-91E7-C67C318FCC46}.Development|Default.Build.0 = Development
+		{1D4CA0A3-94AA-42C1-BF21-060F9FC51C2C}.Development|Default.ActiveCfg = Development
+		{1D4CA0A3-94AA-42C1-BF21-060F9FC51C2C}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +36,7 @@ Global
 		{36D28996-5CC8-4ECF-8C90-394070543997} = {63169141-DEF2-439E-A9D8-C3CD3C4086CF}
 		{90F627DF-6B43-4FF0-A234-F0B42143BA08} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{256D3DD7-561E-44E7-91E7-C67C318FCC46} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{1D4CA0A3-94AA-42C1-BF21-060F9FC51C2C} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
