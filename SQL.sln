@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{36
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Merge_Join_Concatenation", "SSIS\Examples\Merge_Join_Concatenation\Merge_Join_Concatenation.dtproj", "{90F627DF-6B43-4FF0-A234-F0B42143BA08}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Sync_Table_Join", "SSIS\Examples\Sync_Table_Join\Sync_Table_Join.dtproj", "{256D3DD7-561E-44E7-91E7-C67C318FCC46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -20,6 +22,8 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{90F627DF-6B43-4FF0-A234-F0B42143BA08}.Development|Default.ActiveCfg = Development
 		{90F627DF-6B43-4FF0-A234-F0B42143BA08}.Development|Default.Build.0 = Development
+		{256D3DD7-561E-44E7-91E7-C67C318FCC46}.Development|Default.ActiveCfg = Development
+		{256D3DD7-561E-44E7-91E7-C67C318FCC46}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -27,6 +31,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{36D28996-5CC8-4ECF-8C90-394070543997} = {63169141-DEF2-439E-A9D8-C3CD3C4086CF}
 		{90F627DF-6B43-4FF0-A234-F0B42143BA08} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{256D3DD7-561E-44E7-91E7-C67C318FCC46} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
