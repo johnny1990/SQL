@@ -1,0 +1,5 @@
+CustomerName,PhNo,email
+AAA,111-222-3000,aaa@test.com
+BBB,111-222-3000,bbb@test.com
+CCC,111-222-3000,ccc@test.com
+DDD,111-222-3000,ddd@test.com
