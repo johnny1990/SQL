@@ -23,6 +23,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PackageConfiguration", "Pac
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Northwind_SSIS", "Northwind_SSIS\Northwind_SSIS.dtproj", "{646D2C88-BB3D-4EFE-9C03-F6889B09B842}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CustomMessage_SSIS", "CustomMessage_SSIS\CustomMessage_SSIS.dtproj", "{75C1ACBC-9348-4B08-9A9A-CE672D053BE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -40,6 +42,8 @@ Global
 		{0EAEADA3-7974-4B93-B538-95A3E4048B12}.Development|Default.Build.0 = Development
 		{646D2C88-BB3D-4EFE-9C03-F6889B09B842}.Development|Default.ActiveCfg = Development
 		{646D2C88-BB3D-4EFE-9C03-F6889B09B842}.Development|Default.Build.0 = Development
+		{75C1ACBC-9348-4B08-9A9A-CE672D053BE7}.Development|Default.ActiveCfg = Development
+		{75C1ACBC-9348-4B08-9A9A-CE672D053BE7}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,6 +56,7 @@ Global
 		{E4219E0B-E0E5-434C-8FC1-F59E4F5AE019} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{0EAEADA3-7974-4B93-B538-95A3E4048B12} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{646D2C88-BB3D-4EFE-9C03-F6889B09B842} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{75C1ACBC-9348-4B08-9A9A-CE672D053BE7} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
