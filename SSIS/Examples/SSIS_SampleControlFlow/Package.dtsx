@@ -1,0 +1,1489 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/15/2021 1:45:56 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAN"
+  DTS:CreatorName="MAN\MAN"
+  DTS:DTSID="{AB7883EC-9E3F-4526-8C96-53E1211A0F36}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{4463909A-EF70-4E69-B3E3-95AC170B3CA4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{402B961E-EA80-4963-BE12-AE7EF36A9DD4}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\Aplicatii VS\SQL\SQL\SSIS\Examples\SSIS_SampleControlFlow\FlatFileDestination.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order_id"
+              DTS:DTSID="{B8254612-037C-451D-B037-BDC62EDBD07F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="511"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="customer_name"
+              DTS:DTSID="{705A4F83-72DE-412B-ABE5-BF52447AD76A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="store_name"
+              DTS:DTSID="{CC4A0FE5-2A29-4208-97B1-2F21617796CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="17"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order_status"
+              DTS:DTSID="{A60261F4-5F68-40E6-9415-DE8F20F2152F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="order_date"
+              DTS:DTSID="{1E84C0AA-60A9-4FC5-9817-16E87EDB4FDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="512"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product_BrandName"
+              DTS:DTSID="{1A39D0C8-4C9D-41B4-BA38-B775E9E86C83}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="10"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="list_price"
+              DTS:DTSID="{888D28B3-73F1-46A5-831C-411B42DF6E3B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="4"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="discount"
+              DTS:DTSID="{E1870649-E9EB-4AE6-BF55-4B7B8DF3F986}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="quantity"
+              DTS:DTSID="{B7FB5B53-0E47-4D16-9757-2966675032D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="31"
+              DTS:DataScale="8"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalPriceGrProducts"
+              DTS:DTSID="{91F74676-6439-4EE9-923A-9DE27683A81C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MAN.BikeStoresSampleDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{68C09AF4-2B4F-4B2D-8E4C-1CDEC6B38BDE}"
+      DTS:ObjectName="MAN.BikeStoresSampleDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MAN;Initial Catalog=BikeStoresSampleDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Clean destination table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{808B9C0A-C6CF-40E9-84D6-655CCED81612}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clean destination table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{68C09AF4-2B4F-4B2D-8E4C-1CDEC6B38BDE}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE DestinationTable" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Test delete data condition query"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3C611C6F-0AB7-456A-AFDA-486B9C5D5B6A}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Test delete data condition query"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{68C09AF4-2B4F-4B2D-8E4C-1CDEC6B38BDE}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="DELETE FROM DestinationTable WHERE  YEAR(order_date)= 2014" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Transfer data into destination table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{3E5BB060-9802-4EF6-8DEF-1C6CAABC9EC2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Transfer data into destination table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Transfer data into destination table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[DestinationTable]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select o.order_id,c.first_name+''+c.last_name as customer_name,s.store_name,
+o.order_status,o.order_date,p.product_name+'/ '+ b.brand_name as Product_BrandName,
+i.list_price,i.discount, i.quantity,
+(i.list_price - i.discount*i.list_price/100) * i.quantity as TotalPriceGrProducts
+from sales.orders o
+inner join sales.order_items i on o.order_id = i.order_id
+inner join production.products p on p.product_id = i.product_id
+inner join production.brands b on b.brand_id = p.brand_id
+inner join sales.customers c on c.customer_id = o.customer_id
+inner join sales.stores s on s.store_id = o.store_id
+
+--where
+order by o.order_id asc</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transfer data into destination table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAN.BikeStoresSampleDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAN.BikeStoresSampleDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[order_id]"
+                      cachedDataType="i4"
+                      cachedName="order_id"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]" />
+                    <inputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[customer_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="511"
+                      cachedName="customer_name"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_name]" />
+                    <inputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[store_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="store_name"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[store_name]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_name]" />
+                    <inputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[order_status]"
+                      cachedDataType="ui1"
+                      cachedName="order_status"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_status]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_status]" />
+                    <inputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[order_date]"
+                      cachedDataType="dbDate"
+                      cachedName="order_date"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_date]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]" />
+                    <inputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Product_BrandName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="512"
+                      cachedName="Product_BrandName"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product_BrandName]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product_BrandName]" />
+                    <inputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[list_price]"
+                      cachedDataType="numeric"
+                      cachedName="list_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[list_price]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]" />
+                    <inputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[discount]"
+                      cachedDataType="numeric"
+                      cachedName="discount"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[discount]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]" />
+                    <inputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[quantity]"
+                      cachedDataType="i4"
+                      cachedName="quantity"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]" />
+                    <inputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TotalPriceGrProducts]"
+                      cachedDataType="numeric"
+                      cachedName="TotalPriceGrProducts"
+                      cachedPrecision="31"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalPriceGrProducts]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[TotalPriceGrProducts]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_id]"
+                      dataType="i4"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      name="customer_name" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="store_name" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_status]"
+                      dataType="ui1"
+                      name="order_status" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[order_date]"
+                      dataType="dbDate"
+                      name="order_date" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product_BrandName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="Product_BrandName" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[list_price]"
+                      dataType="numeric"
+                      name="list_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[discount]"
+                      dataType="numeric"
+                      name="discount"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TotalPriceGrProducts]"
+                      dataType="numeric"
+                      name="TotalPriceGrProducts"
+                      precision="31"
+                      scale="8" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Transfer data into destination table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transfer data into destination table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transfer data into destination table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Transfer data into destination table\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select o.order_id,c.first_name+''+c.last_name as customer_name,s.store_name,
+o.order_status,o.order_date,p.product_name+'/ '+ b.brand_name as Product_BrandName,
+i.list_price,i.discount, i.quantity,
+(i.list_price - i.discount*i.list_price/100) * i.quantity as TotalPriceGrProducts
+from sales.orders o
+inner join sales.order_items i on o.order_id = i.order_id
+inner join production.products p on p.product_id = i.product_id
+inner join production.brands b on b.brand_id = p.brand_id
+inner join sales.customers c on c.customer_id = o.customer_id
+inner join sales.stores s on s.store_id = o.store_id
+
+--where
+order by o.order_id asc</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Transfer data into destination table\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAN.BikeStoresSampleDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAN.BikeStoresSampleDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]"
+                      name="order_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_name]"
+                      length="511"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_name]"
+                      name="customer_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[store_name]"
+                      length="255"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_name]"
+                      name="store_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_status]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_status]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_status]"
+                      name="order_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_date]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]"
+                      name="order_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product_BrandName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Product_BrandName]"
+                      length="512"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product_BrandName]"
+                      name="Product_BrandName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[list_price]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]"
+                      name="list_price"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[discount]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]"
+                      name="discount"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
+                      name="quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[TotalPriceGrProducts]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TotalPriceGrProducts]"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].Columns[TotalPriceGrProducts]"
+                      name="TotalPriceGrProducts"
+                      precision="31"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      dataType="i4"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      name="customer_name" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="store_name" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_status]"
+                      dataType="ui1"
+                      name="order_status" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_date]"
+                      dataType="dbDate"
+                      name="order_date" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Product_BrandName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="Product_BrandName" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[list_price]"
+                      dataType="numeric"
+                      name="list_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[discount]"
+                      dataType="numeric"
+                      name="discount"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TotalPriceGrProducts]"
+                      dataType="numeric"
+                      name="TotalPriceGrProducts"
+                      precision="31"
+                      scale="8" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      dataType="i4"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      name="order_id" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_name]"
+                      name="customer_name" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[store_name]"
+                      name="store_name" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_status]"
+                      dataType="ui1"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_status]"
+                      name="order_status" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_date]"
+                      name="order_date" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Product_BrandName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Product_BrandName]"
+                      name="Product_BrandName" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[list_price]"
+                      dataType="numeric"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[list_price]"
+                      name="list_price"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[discount]"
+                      dataType="numeric"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[discount]"
+                      name="discount"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      dataType="i4"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      name="quantity" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TotalPriceGrProducts]"
+                      dataType="numeric"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TotalPriceGrProducts]"
+                      name="TotalPriceGrProducts"
+                      precision="31"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Transfer data into destination table.Paths[OLE DB Source Output]"
+              endId="Package\Transfer data into destination table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Transfer data into destination table\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Write into flat file"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{629CC14A-EC71-4C74-A506-4049EB60396D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Write into flat file"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Write into flat file\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Write into flat file\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].Columns[order_id]"
+                      cachedDataType="i4"
+                      cachedName="order_id"
+                      externalMetadataColumnId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[order_id]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]" />
+                    <inputColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].Columns[customer_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="511"
+                      cachedName="customer_name"
+                      externalMetadataColumnId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[customer_name]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_name]" />
+                    <inputColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].Columns[store_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="store_name"
+                      externalMetadataColumnId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[store_name]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_name]" />
+                    <inputColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].Columns[order_status]"
+                      cachedDataType="ui1"
+                      cachedName="order_status"
+                      externalMetadataColumnId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[order_status]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_status]" />
+                    <inputColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].Columns[order_date]"
+                      cachedDataType="dbDate"
+                      cachedName="order_date"
+                      externalMetadataColumnId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[order_date]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]" />
+                    <inputColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].Columns[Product_BrandName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="512"
+                      cachedName="Product_BrandName"
+                      externalMetadataColumnId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Product_BrandName]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product_BrandName]" />
+                    <inputColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].Columns[list_price]"
+                      cachedDataType="numeric"
+                      cachedName="list_price"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[list_price]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]" />
+                    <inputColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].Columns[discount]"
+                      cachedDataType="numeric"
+                      cachedName="discount"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[discount]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]" />
+                    <inputColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].Columns[quantity]"
+                      cachedDataType="i4"
+                      cachedName="quantity"
+                      externalMetadataColumnId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[quantity]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]" />
+                    <inputColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].Columns[TotalPriceGrProducts]"
+                      cachedDataType="numeric"
+                      cachedName="TotalPriceGrProducts"
+                      cachedPrecision="31"
+                      cachedScale="8"
+                      externalMetadataColumnId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TotalPriceGrProducts]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[TotalPriceGrProducts]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[order_id]"
+                      dataType="i4"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[customer_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      name="customer_name" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="store_name" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[order_status]"
+                      dataType="ui1"
+                      name="order_status" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[order_date]"
+                      dataType="dbDate"
+                      name="order_date" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Product_BrandName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="Product_BrandName" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[list_price]"
+                      dataType="numeric"
+                      name="list_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[discount]"
+                      dataType="numeric"
+                      name="discount"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TotalPriceGrProducts]"
+                      dataType="numeric"
+                      name="TotalPriceGrProducts"
+                      precision="31"
+                      scale="8" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Write into flat file\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[DestinationTable]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Write into flat file\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAN.BikeStoresSampleDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAN.BikeStoresSampleDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_id]"
+                      name="order_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_name]"
+                      length="511"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[customer_name]"
+                      name="customer_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[store_name]"
+                      length="255"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[store_name]"
+                      name="store_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_status]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_status]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_status]"
+                      name="order_status"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_date]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[order_date]"
+                      name="order_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product_BrandName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Product_BrandName]"
+                      length="512"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product_BrandName]"
+                      name="Product_BrandName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[list_price]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[list_price]"
+                      name="list_price"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[discount]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[discount]"
+                      name="discount"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[quantity]"
+                      name="quantity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[TotalPriceGrProducts]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TotalPriceGrProducts]"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].Columns[TotalPriceGrProducts]"
+                      name="TotalPriceGrProducts"
+                      precision="31"
+                      scale="8"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_id]"
+                      dataType="i4"
+                      name="order_id" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[customer_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      name="customer_name" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="store_name" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_status]"
+                      dataType="ui1"
+                      name="order_status" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[order_date]"
+                      dataType="dbDate"
+                      name="order_date" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Product_BrandName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      name="Product_BrandName" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[list_price]"
+                      dataType="numeric"
+                      name="list_price"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[discount]"
+                      dataType="numeric"
+                      name="discount"
+                      precision="4"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[quantity]"
+                      dataType="i4"
+                      name="quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TotalPriceGrProducts]"
+                      dataType="numeric"
+                      name="TotalPriceGrProducts"
+                      precision="31"
+                      scale="8" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      dataType="i4"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_id]"
+                      name="order_id" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="511"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[customer_name]"
+                      name="customer_name" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[store_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[store_name]"
+                      name="store_name" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_status]"
+                      dataType="ui1"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_status]"
+                      name="order_status" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_date]"
+                      dataType="dbDate"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[order_date]"
+                      name="order_date" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Product_BrandName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="512"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Product_BrandName]"
+                      name="Product_BrandName" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[list_price]"
+                      dataType="numeric"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[list_price]"
+                      name="list_price"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[discount]"
+                      dataType="numeric"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[discount]"
+                      name="discount"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      dataType="i4"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[quantity]"
+                      name="quantity" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TotalPriceGrProducts]"
+                      dataType="numeric"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TotalPriceGrProducts]"
+                      name="TotalPriceGrProducts"
+                      precision="31"
+                      scale="8" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Write into flat file.Paths[OLE DB Source Output]"
+              endId="Package\Write into flat file\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Write into flat file\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2A164AB5-19F1-4309-9A02-CC80E725FD77}"
+      DTS:From="Package\Clean destination table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Transfer data into destination table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7F1D686B-E6DF-4745-920C-547215E4CAC5}"
+      DTS:From="Package\Transfer data into destination table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Test delete data condition query" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{EA85C696-E99E-4796-BF71-C74BDC575C71}"
+      DTS:From="Package\Test delete data condition query"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Write into flat file" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="186,42"
+          Id="Package\Clean destination table"
+          TopLeft="530,21" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Transfer data into destination table"
+          TopLeft="502,108" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="623.75,63">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Test delete data condition query"
+          TopLeft="511,200" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Write into flat file"
+          TopLeft="545,291" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="625.5,150">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="626,242">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Transfer data into destination table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Transfer data into destination table\OLE DB Destination"
+          TopLeft="517,150" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Transfer data into destination table\OLE DB Source"
+          TopLeft="522,56" />
+        <EdgeLayout
+          Id="Package\Transfer data into destination table.Paths[OLE DB Source Output]"
+          TopLeft="599.75,98">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transfer data into destination table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Transfer data into destination table\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Write into flat file">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Write into flat file\OLE DB Source"
+          TopLeft="502,60" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Write into flat file\Flat File Destination"
+          TopLeft="495,147" />
+        <EdgeLayout
+          Id="Package\Write into flat file.Paths[OLE DB Source Output]"
+          TopLeft="579,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Write into flat file\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
