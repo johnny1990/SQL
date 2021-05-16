@@ -29,6 +29,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PackageConfiguration", "SSI
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS_SampleControlFlow", "SSIS\Examples\SSIS_SampleControlFlow\SSIS_SampleControlFlow.dtproj", "{31811B9B-547E-4DE6-955A-37436CB5027A}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Insert_XML", "SSIS\Examples\Insert_XML\Insert_XML.dtproj", "{D624673B-0CFC-4124-9B79-3572D441C5A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -52,6 +54,8 @@ Global
 		{6BA4D4F8-1566-49B2-85C4-EB15B7B09E91}.Development|Default.Build.0 = Development
 		{31811B9B-547E-4DE6-955A-37436CB5027A}.Development|Default.ActiveCfg = Development
 		{31811B9B-547E-4DE6-955A-37436CB5027A}.Development|Default.Build.0 = Development
+		{D624673B-0CFC-4124-9B79-3572D441C5A1}.Development|Default.ActiveCfg = Development
+		{D624673B-0CFC-4124-9B79-3572D441C5A1}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -67,6 +71,7 @@ Global
 		{3D4AEB42-265A-48DF-B9C0-918DF62EFB5E} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{6BA4D4F8-1566-49B2-85C4-EB15B7B09E91} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{31811B9B-547E-4DE6-955A-37436CB5027A} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{D624673B-0CFC-4124-9B79-3572D441C5A1} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
