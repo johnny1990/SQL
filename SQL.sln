@@ -35,6 +35,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SQLServerExportToExcel", "S
 EndProject
 Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "MultidimensionalProject_SSAS", "SSAS\MultidimensionalProject_SSAS\MultidimensionalProject_SSAS.dwproj", "{D9C34342-DDEE-4C37-AB49-FFD00F590E4B}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Checkpoints", "SSIS\Examples\Checkpoints\Checkpoints.dtproj", "{EF5EA8D1-5197-468E-9E55-76811A8FAC4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -65,6 +67,8 @@ Global
 		{D9C34342-DDEE-4C37-AB49-FFD00F590E4B}.Development|Default.ActiveCfg = Development
 		{D9C34342-DDEE-4C37-AB49-FFD00F590E4B}.Development|Default.Build.0 = Development
 		{D9C34342-DDEE-4C37-AB49-FFD00F590E4B}.Development|Default.Deploy.0 = Development
+		{EF5EA8D1-5197-468E-9E55-76811A8FAC4C}.Development|Default.ActiveCfg = Development
+		{EF5EA8D1-5197-468E-9E55-76811A8FAC4C}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +87,7 @@ Global
 		{D624673B-0CFC-4124-9B79-3572D441C5A1} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{7A270F3B-AA36-4BD8-B620-A10557423FD9} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{D9C34342-DDEE-4C37-AB49-FFD00F590E4B} = {388913BB-8485-4DE9-B0AA-8F678CCB70DD}
+		{EF5EA8D1-5197-468E-9E55-76811A8FAC4C} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
