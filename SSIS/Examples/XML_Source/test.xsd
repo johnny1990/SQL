@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ROOT">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" name="row">
+          <xs:complexType>
+            <xs:attribute name="firstName" type="xs:string" use="optional" />
+            <xs:attribute name="lastName" type="xs:string" use="optional" />
+            <xs:attribute name="city" type="xs:string" use="optional" />
+            <xs:attribute name="state" type="xs:string" use="optional" />
+            <xs:attribute name="phone" type="xs:string" use="optional" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

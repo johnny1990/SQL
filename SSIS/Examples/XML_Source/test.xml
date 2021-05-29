@@ -1,0 +1,8 @@
+<ROOT>
+<row firstName="Joe" lastName="Blow" city="Seattle" state="WA" phone="555-666-7777"/>
+<row firstName="Jane" lastName="Doe" city="Los Angeles" state="CA" phone="566-866-2345"/>
+<row firstName="Robert" lastName="Smith" city="Washington" state="DC" phone="444-555-6666"/>
+<row firstName="Mary" lastName="Contrary" city="Garden City" state="FL" phone="234-876-9374"/>
+<row firstName="Thomas" lastName="Doubter" city="New Orleans" state="LA" phone="384-389-7342"/>
+<row firstName="Barbara" lastName="Bologna" city="Chicago" state="IL" phone="483-483-8162"/>
+</ROOT>

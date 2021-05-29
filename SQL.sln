@@ -39,6 +39,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Checkpoints", "SSIS\Example
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Foreach_Loop", "SSIS\Examples\Foreach_Loop\Foreach_Loop.dtproj", "{7CE9078E-F70D-4837-A50C-F4C5342EF388}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "XML_Source", "SSIS\Examples\XML_Source\XML_Source.dtproj", "{40F3D83F-A55F-4E5A-942E-06CD327E28F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -73,6 +75,8 @@ Global
 		{EF5EA8D1-5197-468E-9E55-76811A8FAC4C}.Development|Default.Build.0 = Development
 		{7CE9078E-F70D-4837-A50C-F4C5342EF388}.Development|Default.ActiveCfg = Development
 		{7CE9078E-F70D-4837-A50C-F4C5342EF388}.Development|Default.Build.0 = Development
+		{40F3D83F-A55F-4E5A-942E-06CD327E28F6}.Development|Default.ActiveCfg = Development
+		{40F3D83F-A55F-4E5A-942E-06CD327E28F6}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,6 +97,7 @@ Global
 		{D9C34342-DDEE-4C37-AB49-FFD00F590E4B} = {388913BB-8485-4DE9-B0AA-8F678CCB70DD}
 		{EF5EA8D1-5197-468E-9E55-76811A8FAC4C} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{7CE9078E-F70D-4837-A50C-F4C5342EF388} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{40F3D83F-A55F-4E5A-942E-06CD327E28F6} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
