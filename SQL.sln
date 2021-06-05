@@ -47,6 +47,8 @@ Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SampleProject", "SSRS\Sampl
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ExploringData", "SSIS\Examples\ExploringData\ExploringData.dtproj", "{77DDE07D-6AD4-4DB9-B9D5-CBA5828AFF38}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ScriptTask", "SSIS\Examples\ScriptTask\ScriptTask.dtproj", "{39080733-4836-46A8-A090-8E089BB64E27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -206,6 +208,14 @@ Global
 		{77DDE07D-6AD4-4DB9-B9D5-CBA5828AFF38}.Development|Default.Build.0 = Development
 		{77DDE07D-6AD4-4DB9-B9D5-CBA5828AFF38}.Release|Default.ActiveCfg = Development
 		{77DDE07D-6AD4-4DB9-B9D5-CBA5828AFF38}.Release|Default.Build.0 = Development
+		{39080733-4836-46A8-A090-8E089BB64E27}.Debug|Default.ActiveCfg = Development
+		{39080733-4836-46A8-A090-8E089BB64E27}.Debug|Default.Build.0 = Development
+		{39080733-4836-46A8-A090-8E089BB64E27}.DebugLocal|Default.ActiveCfg = Development
+		{39080733-4836-46A8-A090-8E089BB64E27}.DebugLocal|Default.Build.0 = Development
+		{39080733-4836-46A8-A090-8E089BB64E27}.Development|Default.ActiveCfg = Development
+		{39080733-4836-46A8-A090-8E089BB64E27}.Development|Default.Build.0 = Development
+		{39080733-4836-46A8-A090-8E089BB64E27}.Release|Default.ActiveCfg = Development
+		{39080733-4836-46A8-A090-8E089BB64E27}.Release|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -230,6 +240,7 @@ Global
 		{9432F076-343E-4D71-91E3-EC7F0510BA7D} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{A76D9578-2737-4627-9D48-571D60FD9693} = {D1418A01-3887-40F2-8023-AD12139817E3}
 		{77DDE07D-6AD4-4DB9-B9D5-CBA5828AFF38} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{39080733-4836-46A8-A090-8E089BB64E27} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
