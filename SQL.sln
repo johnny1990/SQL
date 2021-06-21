@@ -55,6 +55,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "ImportUsingScript", "SSIS\E
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "RecordSetDestination", "SSIS\Examples\RecordSetDestination\RecordSetDestination.dtproj", "{565C9B7B-8161-4F6C-99A7-6060AE2B60FE}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Insert_Update_Rows", "Insert_Update_Rows\Insert_Update_Rows.dtproj", "{55728B78-09A6-4A14-90AA-8073AA508845}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -246,6 +248,14 @@ Global
 		{565C9B7B-8161-4F6C-99A7-6060AE2B60FE}.Development|Default.Build.0 = Development
 		{565C9B7B-8161-4F6C-99A7-6060AE2B60FE}.Release|Default.ActiveCfg = Development
 		{565C9B7B-8161-4F6C-99A7-6060AE2B60FE}.Release|Default.Build.0 = Development
+		{55728B78-09A6-4A14-90AA-8073AA508845}.Debug|Default.ActiveCfg = Development
+		{55728B78-09A6-4A14-90AA-8073AA508845}.Debug|Default.Build.0 = Development
+		{55728B78-09A6-4A14-90AA-8073AA508845}.DebugLocal|Default.ActiveCfg = Development
+		{55728B78-09A6-4A14-90AA-8073AA508845}.DebugLocal|Default.Build.0 = Development
+		{55728B78-09A6-4A14-90AA-8073AA508845}.Development|Default.ActiveCfg = Development
+		{55728B78-09A6-4A14-90AA-8073AA508845}.Development|Default.Build.0 = Development
+		{55728B78-09A6-4A14-90AA-8073AA508845}.Release|Default.ActiveCfg = Development
+		{55728B78-09A6-4A14-90AA-8073AA508845}.Release|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -274,6 +284,7 @@ Global
 		{8FED31BF-FA44-4AFB-9337-31048001F0AA} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{9AF678EB-3107-42D0-B240-85C58C884F2E} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{565C9B7B-8161-4F6C-99A7-6060AE2B60FE} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{55728B78-09A6-4A14-90AA-8073AA508845} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
