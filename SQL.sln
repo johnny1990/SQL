@@ -59,6 +59,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Insert_Update_Rows", "Inser
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PauseTaskInSSIS", "PauseTaskInSSIS\PauseTaskInSSIS.dtproj", "{4892E019-11A2-4914-B608-6915739DF050}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Events_SSIS", "SSIS\Examples\Events_SSIS\Events_SSIS.dtproj", "{D42F9F22-3F52-4AE8-95A6-D9493F271352}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -266,6 +268,14 @@ Global
 		{4892E019-11A2-4914-B608-6915739DF050}.Development|Default.Build.0 = Development
 		{4892E019-11A2-4914-B608-6915739DF050}.Release|Default.ActiveCfg = Development
 		{4892E019-11A2-4914-B608-6915739DF050}.Release|Default.Build.0 = Development
+		{D42F9F22-3F52-4AE8-95A6-D9493F271352}.Debug|Default.ActiveCfg = Development
+		{D42F9F22-3F52-4AE8-95A6-D9493F271352}.Debug|Default.Build.0 = Development
+		{D42F9F22-3F52-4AE8-95A6-D9493F271352}.DebugLocal|Default.ActiveCfg = Development
+		{D42F9F22-3F52-4AE8-95A6-D9493F271352}.DebugLocal|Default.Build.0 = Development
+		{D42F9F22-3F52-4AE8-95A6-D9493F271352}.Development|Default.ActiveCfg = Development
+		{D42F9F22-3F52-4AE8-95A6-D9493F271352}.Development|Default.Build.0 = Development
+		{D42F9F22-3F52-4AE8-95A6-D9493F271352}.Release|Default.ActiveCfg = Development
+		{D42F9F22-3F52-4AE8-95A6-D9493F271352}.Release|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -296,6 +306,7 @@ Global
 		{565C9B7B-8161-4F6C-99A7-6060AE2B60FE} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{55728B78-09A6-4A14-90AA-8073AA508845} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{4892E019-11A2-4914-B608-6915739DF050} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{D42F9F22-3F52-4AE8-95A6-D9493F271352} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
