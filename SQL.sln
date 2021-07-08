@@ -61,6 +61,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PauseTaskInSSIS", "PauseTas
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Events_SSIS", "SSIS\Examples\Events_SSIS\Events_SSIS.dtproj", "{D42F9F22-3F52-4AE8-95A6-D9493F271352}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Deadlock_SQLServer_SSIS", "Deadlock_SQLServer_SSIS\Deadlock_SQLServer_SSIS.dtproj", "{777BED8C-FF37-41C2-A671-1E1979376A62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -276,6 +278,14 @@ Global
 		{D42F9F22-3F52-4AE8-95A6-D9493F271352}.Development|Default.Build.0 = Development
 		{D42F9F22-3F52-4AE8-95A6-D9493F271352}.Release|Default.ActiveCfg = Development
 		{D42F9F22-3F52-4AE8-95A6-D9493F271352}.Release|Default.Build.0 = Development
+		{777BED8C-FF37-41C2-A671-1E1979376A62}.Debug|Default.ActiveCfg = Development
+		{777BED8C-FF37-41C2-A671-1E1979376A62}.Debug|Default.Build.0 = Development
+		{777BED8C-FF37-41C2-A671-1E1979376A62}.DebugLocal|Default.ActiveCfg = Development
+		{777BED8C-FF37-41C2-A671-1E1979376A62}.DebugLocal|Default.Build.0 = Development
+		{777BED8C-FF37-41C2-A671-1E1979376A62}.Development|Default.ActiveCfg = Development
+		{777BED8C-FF37-41C2-A671-1E1979376A62}.Development|Default.Build.0 = Development
+		{777BED8C-FF37-41C2-A671-1E1979376A62}.Release|Default.ActiveCfg = Development
+		{777BED8C-FF37-41C2-A671-1E1979376A62}.Release|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -307,6 +317,7 @@ Global
 		{55728B78-09A6-4A14-90AA-8073AA508845} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{4892E019-11A2-4914-B608-6915739DF050} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{D42F9F22-3F52-4AE8-95A6-D9493F271352} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{777BED8C-FF37-41C2-A671-1E1979376A62} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
