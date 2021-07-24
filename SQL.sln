@@ -63,6 +63,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Deadlock_SQLServer_SSIS", "
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Insert_Update_Rows", "SSIS\Examples\Insert_Update_Rows\Insert_Update_Rows.dtproj", "{7CF58B5F-DEEF-4A5C-9AF3-3F63A4FDA791}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS_Sequences_Container_Flow", "SSIS\Examples\SSIS_Sequences_Container_Flow\SSIS_Sequences_Container_Flow.dtproj", "{1556E1D1-7937-4EE7-B0F6-584D1E60D2DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -286,6 +288,14 @@ Global
 		{7CF58B5F-DEEF-4A5C-9AF3-3F63A4FDA791}.Development|Default.Build.0 = Development
 		{7CF58B5F-DEEF-4A5C-9AF3-3F63A4FDA791}.Release|Default.ActiveCfg = Development
 		{7CF58B5F-DEEF-4A5C-9AF3-3F63A4FDA791}.Release|Default.Build.0 = Development
+		{1556E1D1-7937-4EE7-B0F6-584D1E60D2DA}.Debug|Default.ActiveCfg = Development
+		{1556E1D1-7937-4EE7-B0F6-584D1E60D2DA}.Debug|Default.Build.0 = Development
+		{1556E1D1-7937-4EE7-B0F6-584D1E60D2DA}.DebugLocal|Default.ActiveCfg = Development
+		{1556E1D1-7937-4EE7-B0F6-584D1E60D2DA}.DebugLocal|Default.Build.0 = Development
+		{1556E1D1-7937-4EE7-B0F6-584D1E60D2DA}.Development|Default.ActiveCfg = Development
+		{1556E1D1-7937-4EE7-B0F6-584D1E60D2DA}.Development|Default.Build.0 = Development
+		{1556E1D1-7937-4EE7-B0F6-584D1E60D2DA}.Release|Default.ActiveCfg = Development
+		{1556E1D1-7937-4EE7-B0F6-584D1E60D2DA}.Release|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -318,6 +328,7 @@ Global
 		{8C9F310A-4541-416C-9173-43BAB6488B9A} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{A4B88AAC-E5ED-412A-8148-18D734AB6B0E} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{7CF58B5F-DEEF-4A5C-9AF3-3F63A4FDA791} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{1556E1D1-7937-4EE7-B0F6-584D1E60D2DA} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}

@@ -1,0 +1,960 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/23/2021 7:27:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAN"
+  DTS:CreatorName="MAN\MAN"
+  DTS:DTSID="{4A5E5D19-DE46-4AB3-9C45-7184A16A8727}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{5626E9F7-9341-4D5A-85C0-16D7CA34EA14}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MAN.SSISDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+      DTS:ObjectName="MAN.SSISDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MAN;Initial Catalog=SSISDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Add FK"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{D7759B17-D78D-4DC3-B3BF-1FF1C31DBF54}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Add FK">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{025FCF5D-C0AD-4DFE-9F49-9BC52E0750A2}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="SCRIPT_LIST">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Add FK\Add FKs for each table"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{8c8afd2e-43ed-4e66-ad81-ba0e0b68f392}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Add FKs for each table">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.ForEachADOEnumerator"
+            DTS:DTSID="{7d8ff5a1-8c6a-482e-b96c-e166d5305499}"
+            DTS:ObjectName="{EDB63DDE-6809-40A1-B81A-AFE93568BD87}">
+            <DTS:ObjectData>
+              <FEEADO
+                EnumType="EnumerateRowsInFirstTable"
+                VarName="User::SCRIPT_LIST" />
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Add FK\Add FKs for each table\Add FK"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:Disabled="True"
+              DTS:DTSID="{14760fcf-c422-4278-a450-54b95fa8b0f1}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Add FK"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+                  SQLTask:SqlStmtSourceType="Variable"
+                  SQLTask:SqlStatementSource="User::ADD_FK_SCRIPT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{9b70abfd-b373-4dc8-8347-5b3cea40fbe5}"
+              DTS:ObjectName="{A2A4C4F8-DF49-48C5-B3A7-0132F7287F52}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::ADD_FK_SCRIPT" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Add FK\Get Add FK scripts"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{63a15194-595a-41a8-a448-2399dd7a125c}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get Add FK scripts"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+              SQLTask:SqlStatementSource="SELECT [SCRIPT]&#xA;FROM dbo.ETL_FOREIGN_KEY_SCRIPT&#xA;WHERE [COMMAND] = 'ADD'"
+              SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::SCRIPT_LIST" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Add FK.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{bda71a35-d3c9-42d7-8c8f-fee316d5b1f5}"
+          DTS:From="Package\Add FK\Get Add FK scripts"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Add FK\Add FKs for each table" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop FK"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{D5814E90-ED2C-47C9-B262-3C79BE6209D1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop FK">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{89A42358-6CC7-4825-846F-F62F9E08AE61}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="SCRIPT_LIST">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Drop FK\Drop FKs for each table"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{17f87a76-dfeb-4c43-8ff3-1eeaf0ed1e8f}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Drop FKs for each table">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.ForEachADOEnumerator"
+            DTS:DTSID="{32751416-73d7-41ca-9fed-0863ca2956eb}"
+            DTS:ObjectName="{EDB63DDE-6809-40A1-B81A-AFE93568BD87}">
+            <DTS:ObjectData>
+              <FEEADO
+                EnumType="EnumerateRowsInFirstTable"
+                VarName="User::SCRIPT_LIST" />
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Drop FK\Drop FKs for each table\Drop FK"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:Disabled="True"
+              DTS:DTSID="{cfe1123e-4b29-4e95-88fe-49f9d232c6ef}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Drop FK"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+                  SQLTask:SqlStmtSourceType="Variable"
+                  SQLTask:SqlStatementSource="User::DROP_FK_SCRIPT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{bb264293-aa79-4724-83f7-179862faa46f}"
+              DTS:ObjectName="{166BCD56-D164-4870-AE45-96C79B5D8FEB}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::DROP_FK_SCRIPT" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Drop FK\Get Drop FK scripts"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ec204d38-a028-429e-85ae-f090d33055e8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get Drop FK scripts"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+              SQLTask:SqlStatementSource="SELECT [SCRIPT]&#xA;FROM dbo.ETL_FOREIGN_KEY_SCRIPT&#xA;WHERE [COMMAND] = 'DROP'"
+              SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ResultBinding
+                SQLTask:ResultName="0"
+                SQLTask:DtsVariableName="User::SCRIPT_LIST" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Drop FK.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{35cc625e-405f-4f2c-b410-2b6500913bed}"
+          DTS:From="Package\Drop FK\Get Drop FK scripts"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Drop FK\Drop FKs for each table" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Initialize"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{0C406EE7-D1FC-43B5-AD11-CE7FA6CE6C68}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Initialize">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Initialize\Create customer table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8AA8FCEE-9ECF-44A4-A387-5773B11CE950}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create customer table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+              SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = 'CUSTOMER')&#xA;&#x9;CREATE TABLE dbo.CUSTOMER (&#xA;&#x9;&#x9;CUSTOMER_ID&#x9;&#x9;INT IDENTITY NOT NULL PRIMARY KEY,&#xA;&#x9;&#x9;CUSTOMER_NAME&#x9;VARCHAR(50) NOT NULL,&#xA;&#x9;&#x9;STATE_ID&#x9;&#x9;INT REFERENCES dbo.STATE_LOOKUP(STATE_ID)&#xA;&#x9;)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Initialize\Create lookup table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8DA91183-3EFC-49C9-BF27-D1A83061A8E2}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create lookup table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+              SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = 'STATE_LOOKUP')&#xA;&#x9;CREATE TABLE dbo.STATE_LOOKUP (&#xA;&#x9;&#x9;STATE_ID&#x9;INT IDENTITY NOT NULL PRIMARY KEY,&#xA;&#x9;&#x9;STATE_ABBRV&#x9;CHAR(2) NOT NULL,&#xA;&#x9;&#x9;STATE_NAME&#x9;VARCHAR(50) NOT NULL&#xA;&#x9;)&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Initialize\Create tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{CEBAF15C-F2BE-4864-8FEF-C340A672BB0E}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create tables"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+              SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = 'ETL_TABLES_TO_LOAD')&#xA;CREATE TABLE [dbo].[ETL_TABLES_TO_LOAD](&#xA;&#x9;[TABLE_NAME] [sysname] NOT NULL,&#xA;&#x9;[LOAD] BIT,&#xA;&#x9;[LOAD_SEQUENCE] [int] NULL&#xA;) " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Initialize\Populate tables"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{03F4DBB0-BF65-42D2-9ABC-65B9B0FA4947}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Populate tables"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+              SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT 1 FROM dbo.ETL_TABLES_TO_LOAD)&#xA;&#x9;INSERT INTO dbo.ETL_TABLES_TO_LOAD&#xA;&#x9;SELECT 'STATE_LOOKUP', 1, 0&#xA;&#x9;UNION ALL&#xA;&#x9;SELECT 'CUSTOMER', 1, 10&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Initialize.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{7946D19A-D7FC-4150-B329-5D5B738FFBE9}"
+          DTS:From="Package\Initialize\Create tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Initialize\Populate tables" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Initialize.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{8208215E-14BA-4178-B4B6-BE98236F1A62}"
+          DTS:From="Package\Initialize\Populate tables"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Initialize\Create lookup table" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Initialize.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{BC342B47-2D19-4BE2-8112-EB07D4AE5B63}"
+          DTS:From="Package\Initialize\Create lookup table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Initialize\Create customer table" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Script FK"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{883A5906-DE4A-4F1A-AF3B-71A873CB08E6}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Script FK">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{22044DBD-9FF3-4E95-A1B2-86DEEDF20B5F}"
+          DTS:IncludeInDebugDump="2345"
+          DTS:Namespace="User"
+          DTS:ObjectName="TABLE_LIST">
+          <DTS:VariableValue
+            DTS:DataType="8"
+            xml:space="preserve"></DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Script FK\Alter ETL_SCRIPT_FOREIGN_KEYS procedure"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{a12a5b57-e313-482c-9647-dc3928292fd6}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Alter ETL_SCRIPT_FOREIGN_KEYS procedure"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+              SQLTask:SqlStatementSource="ALTER PROCEDURE dbo.ETL_SCRIPT_FOREIGN_KEYS&#xA; @TABLE_NAME  VARCHAR(128)&#xA;, @SCHEMA_NAME VARCHAR(128) &#xA;AS&#xA;BEGIN&#xA;&#xA; SET NOCOUNT ON  &#xA;&#xA; DECLARE @cmd NVARCHAR(1000) &#xA;&#xA; DECLARE   &#xA;    @FK_NAME sysname,  &#xA;    @FK_OBJECTID INT,  &#xA;    @FK_DISABLED INT,  &#xA;    @FK_NOT_FOR_REPLICATION INT,  &#xA;    @DELETE_RULE    smallint,     &#xA;    @UPDATE_RULE    smallint,     &#xA;    @FKTABLE_NAME sysname,  &#xA;    @FKTABLE_OWNER sysname,  &#xA;    @PKTABLE_NAME sysname,  &#xA;    @PKTABLE_OWNER sysname,  &#xA;    @FKCOLUMN_NAME sysname,  &#xA;    @PKCOLUMN_NAME sysname,  &#xA;    @CONSTRAINT_COLID INT  &#xA;&#xA; DECLARE cursor_fkeys CURSOR FOR   &#xA;    SELECT  Fk.name,  &#xA;      Fk.OBJECT_ID,   &#xA;      Fk.is_disabled,   &#xA;      Fk.is_not_for_replication,   &#xA;      Fk.delete_referential_action,   &#xA;      Fk.update_referential_action,   &#xA;      OBJECT_NAME(Fk.parent_object_id) AS Fk_table_name,   &#xA;      schema_name(Fk.schema_id) AS Fk_table_schema,   &#xA;      TbR.name AS Pk_table_name,   &#xA;      schema_name(TbR.schema_id) Pk_table_schema  &#xA;    FROM    sys.foreign_keys Fk LEFT OUTER JOIN   &#xA;      sys.tables TbR ON TbR.OBJECT_ID = Fk.referenced_object_id    &#xA;    WHERE   TbR.name = @TABLE_NAME  &#xA;      AND schema_name(TbR.schema_id) = @SCHEMA_NAME  &#xA;&#xA; OPEN cursor_fkeys  &#xA;&#xA; FETCH NEXT FROM   cursor_fkeys   &#xA;    INTO @FK_NAME,@FK_OBJECTID,  &#xA;     @FK_DISABLED,  &#xA;     @FK_NOT_FOR_REPLICATION,  &#xA;     @DELETE_RULE,     &#xA;     @UPDATE_RULE,     &#xA;     @FKTABLE_NAME,  &#xA;     @FKTABLE_OWNER,  &#xA;     @PKTABLE_NAME,  &#xA;     @PKTABLE_OWNER  &#xA;&#xA; WHILE @@FETCH_STATUS = 0   &#xA; BEGIN   &#xA;&#xA;    -- drop statement  &#xA;    SET @cmd = &#xA;  'IF EXISTS (SELECT 1 FROM sys.foreign_keys WHERE name = ''' + @FK_NAME + ''' ) ' +    &#xA;  'ALTER TABLE [' + @FKTABLE_OWNER + '].[' + @FKTABLE_NAME +   &#xA;     ']  DROP CONSTRAINT [' + @FK_NAME + ']'     &#xA;&#xA;    INSERT INTO dbo.ETL_FOREIGN_KEY_SCRIPT &#xA;   ([COMMAND], [TABLE_NAME], [FK_NAME], [SCRIPT])  &#xA;    VALUES&#xA;   ('DROP', @FKTABLE_NAME, @FK_NAME, @cmd)&#xA;   &#xA;    -- create process  &#xA;    DECLARE @FKCOLUMNS VARCHAR(1000), @PKCOLUMNS VARCHAR(1000), @COUNTER INT  &#xA;&#xA;    -- create cursor to get FK columns  &#xA;    DECLARE cursor_fkeyCols CURSOR FOR   &#xA;    SELECT  COL_NAME(Fk.parent_object_id, Fk_Cl.parent_column_id) AS Fk_col_name,   &#xA;      COL_NAME(Fk.referenced_object_id, Fk_Cl.referenced_column_id) AS Pk_col_name  &#xA;    FROM    sys.foreign_keys Fk LEFT OUTER JOIN   &#xA;      sys.tables TbR ON TbR.OBJECT_ID = Fk.referenced_object_id INNER JOIN   &#xA;      sys.foreign_key_columns Fk_Cl ON Fk_Cl.constraint_object_id = Fk.OBJECT_ID   &#xA;    WHERE   TbR.name = @TABLE_NAME  &#xA;      AND schema_name(TbR.schema_id) = @SCHEMA_NAME  &#xA;      AND Fk_Cl.constraint_object_id = @FK_OBJECTID &#xA;    ORDER BY Fk_Cl.constraint_column_id  &#xA;&#xA;    OPEN cursor_fkeyCols  &#xA;&#xA;    FETCH NEXT FROM    cursor_fkeyCols INTO @FKCOLUMN_NAME,@PKCOLUMN_NAME  &#xA;&#xA;    SET @COUNTER = 1  &#xA;    SET @FKCOLUMNS = ''  &#xA;    SET @PKCOLUMNS = ''  &#xA;         &#xA;    WHILE @@FETCH_STATUS = 0   &#xA;    BEGIN   &#xA;&#xA;     IF @COUNTER &gt; 1   &#xA;     BEGIN  &#xA;      SET @FKCOLUMNS = @FKCOLUMNS + ','  &#xA;      SET @PKCOLUMNS = @PKCOLUMNS + ','  &#xA;     END  &#xA;&#xA;     SET @FKCOLUMNS = @FKCOLUMNS + '[' + @FKCOLUMN_NAME + ']'  &#xA;     SET @PKCOLUMNS = @PKCOLUMNS + '[' + @PKCOLUMN_NAME + ']'  &#xA;&#xA;     SET @COUNTER = @COUNTER + 1  &#xA;             &#xA;     FETCH NEXT FROM    cursor_fkeyCols INTO @FKCOLUMN_NAME,@PKCOLUMN_NAME  &#xA;    END  &#xA;&#xA;    CLOSE cursor_fkeyCols   &#xA;    DEALLOCATE cursor_fkeyCols   &#xA;&#xA;    -- generate create FK statement  &#xA;    SET @cmd = 'IF NOT EXISTS (SELECT 1 FROM sys.foreign_keys WHERE name = ''' + @FK_NAME + ''' ) ' +&#xA;   'ALTER TABLE [' + @FKTABLE_OWNER + '].[' + @FKTABLE_NAME + ']  WITH ' +   &#xA;     CASE @FK_DISABLED   &#xA;      WHEN 0 THEN ' CHECK '  &#xA;      WHEN 1 THEN ' NOCHECK '  &#xA;     END +  ' ADD CONSTRAINT [' + @FK_NAME   &#xA;     + '] FOREIGN KEY (' + @FKCOLUMNS   &#xA;     + ') REFERENCES [' + @PKTABLE_OWNER + '].[' + @PKTABLE_NAME + '] ('   &#xA;     + @PKCOLUMNS + ') ON UPDATE ' +   &#xA;     CASE @UPDATE_RULE   &#xA;      WHEN 0 THEN ' NO ACTION '  &#xA;      WHEN 1 THEN ' CASCADE '   &#xA;      WHEN 2 THEN ' SET_NULL '   &#xA;      END + ' ON DELETE ' +   &#xA;     CASE @DELETE_RULE  &#xA;      WHEN 0 THEN ' NO ACTION '   &#xA;      WHEN 1 THEN ' CASCADE '   &#xA;      WHEN 2 THEN ' SET_NULL '   &#xA;      END + '' +  &#xA;     CASE @FK_NOT_FOR_REPLICATION  &#xA;      WHEN 0 THEN ''  &#xA;      WHEN 1 THEN ' NOT FOR REPLICATION '  &#xA;     END  &#xA;&#xA;    INSERT INTO dbo.ETL_FOREIGN_KEY_SCRIPT &#xA;   ([COMMAND], [TABLE_NAME], [FK_NAME], [SCRIPT])  &#xA;    VALUES&#xA;   ('ADD', @FKTABLE_NAME, @FK_NAME, @cmd)&#xA;&#xA;&#xA;    FETCH NEXT FROM    cursor_fkeys   &#xA;    INTO @FK_NAME,@FK_OBJECTID,  &#xA;      @FK_DISABLED,  &#xA;      @FK_NOT_FOR_REPLICATION,  &#xA;      @DELETE_RULE,     &#xA;      @UPDATE_RULE,     &#xA;      @FKTABLE_NAME,  &#xA;      @FKTABLE_OWNER,  &#xA;      @PKTABLE_NAME,  &#xA;      @PKTABLE_OWNER  &#xA; END  &#xA;&#xA; CLOSE cursor_fkeys   &#xA; DEALLOCATE cursor_fkeys  &#xA;END&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Script FK\Create ETL_SCRIPT_FOREIGN_KEYS placeholder"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{c11362b7-e740-4868-b6a7-2361eb757953}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create ETL_SCRIPT_FOREIGN_KEYS placeholder"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+              SQLTask:SqlStatementSource="IF NOT EXISTS (&#xA; SELECT 1 FROM INFORMATION_SCHEMA.ROUTINES&#xA; WHERE ROUTINE_NAME = 'ETL_SCRIPT_FOREIGN_KEYS'&#xA;)&#xA; EXEC sp_ExecuteSQL N'CREATE PROCEDURE dbo.ETL_SCRIPT_FOREIGN_KEYS AS BEGIN PRINT ''Placeholder for ETL_SCRIPT_FOREIGN_KEYS procedure'' END;'&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Script FK\Create or Truncate ETL_FOREIGN_KEY_SCRIPT table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{93437dcd-b491-433b-9dcf-5ca5418be7ba}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Create or Truncate ETL_FOREIGN_KEY_SCRIPT table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+              SQLTask:SqlStatementSource="IF NOT EXISTS (SELECT 1 FROM sys.tables WHERE name = 'ETL_FOREIGN_KEY_SCRIPT')&#xA; CREATE TABLE dbo.ETL_FOREIGN_KEY_SCRIPT (&#xA;   [TABLE_NAME] VARCHAR(128)&#xA; , [FK_NAME] VARCHAR(128)&#xA; , [COMMAND] VARCHAR(4)&#xA; , [SCRIPT]  VARCHAR(1000)&#xA; )  &#xA;ELSE&#xA; TRUNCATE TABLE dbo.ETL_FOREIGN_KEY_SCRIPT " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Script FK\Get Tables to Load"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{0e687e92-337d-4be8-b42a-af874586fc42}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:FailParentOnFailure="True"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Get Tables to Load"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+              SQLTask:SqlStatementSource="SELECT TABLE_NAME&#xA; FROM dbo.ETL_TABLES_TO_LOAD&#xA;WHERE LOAD = 1" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Script FK\Process each table to be loaded"
+          DTS:CreationName="STOCK:FOREACHLOOP"
+          DTS:Description="Foreach Loop Container"
+          DTS:DTSID="{4debc4b3-cade-46a2-97fb-72d6c0aac4cf}"
+          DTS:ExecutableType="STOCK:FOREACHLOOP"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Process each table to be loaded">
+          <DTS:ForEachEnumerator
+            DTS:CreationName="Microsoft.ForEachADOEnumerator"
+            DTS:DTSID="{0df05166-c698-43ee-bf3e-baa62424f243}"
+            DTS:ObjectName="{B716AA38-BC6D-4D22-A439-86C0D997C5F5}">
+            <DTS:ObjectData>
+              <FEEADO
+                EnumType="EnumerateRowsInFirstTable"
+                VarName="User::TABLE_LIST" />
+            </DTS:ObjectData>
+          </DTS:ForEachEnumerator>
+          <DTS:Variables>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:DTSID="{5ACC2BA3-FC23-44E1-BF36-1266514B1BBB}"
+              DTS:IncludeInDebugDump="2345"
+              DTS:Namespace="User"
+              DTS:ObjectName="SCHEMA_NAME">
+              <DTS:VariableValue
+                DTS:DataType="8"
+                xml:space="preserve"></DTS:VariableValue>
+            </DTS:Variable>
+            <DTS:Variable
+              DTS:CreationName=""
+              DTS:DTSID="{481E3B02-BF19-4CBB-82AC-97D7B21AB2DC}"
+              DTS:IncludeInDebugDump="2345"
+              DTS:Namespace="User"
+              DTS:ObjectName="TABLE_NAME">
+              <DTS:VariableValue
+                DTS:DataType="8"
+                xml:space="preserve"></DTS:VariableValue>
+            </DTS:Variable>
+          </DTS:Variables>
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Script FK\Process each table to be loaded\Script Drop and Add FKs"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{0a2a8e17-6ede-4ad4-b689-3da0406c003b}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Script Drop and Add FKs"
+              DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables>
+                <DTS:Variable
+                  DTS:CreationName=""
+                  DTS:DTSID="{e1ef53c2-8901-4131-8073-5d180d5c8d9e}"
+                  DTS:IncludeInDebugDump="6789"
+                  DTS:Namespace="User"
+                  DTS:ObjectName="Variable">
+                  <DTS:VariableValue
+                    DTS:DataType="3">0</DTS:VariableValue>
+                </DTS:Variable>
+              </DTS:Variables>
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
+                  SQLTask:SqlStatementSource="dbo.ETL_SCRIPT_FOREIGN_KEYS " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:ForEachVariableMappings>
+            <DTS:ForEachVariableMapping
+              DTS:CreationName=""
+              DTS:DTSID="{28e6a820-f9f6-4ba9-b359-909f10d6419e}"
+              DTS:ObjectName="{DB61D192-4DB4-43DB-9D71-DA026E62A156}"
+              DTS:ValueIndex="0"
+              DTS:VariableName="User::TABLE_NAME" />
+          </DTS:ForEachVariableMappings>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Script FK.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{2c6e5c2a-a166-4da2-a7b0-afedf9bb855b}"
+          DTS:From="Package\Script FK\Create or Truncate ETL_FOREIGN_KEY_SCRIPT table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Script FK\Create ETL_SCRIPT_FOREIGN_KEYS placeholder" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Script FK.PrecedenceConstraints[Constraint 1 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{e1694c96-43bc-497b-be0a-87648263b3e9}"
+          DTS:From="Package\Script FK\Create ETL_SCRIPT_FOREIGN_KEYS placeholder"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1 1"
+          DTS:To="Package\Script FK\Alter ETL_SCRIPT_FOREIGN_KEYS procedure" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Script FK.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{8d159407-5024-4ebb-8ad9-d085f5856b6a}"
+          DTS:From="Package\Script FK\Get Tables to Load"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Script FK\Process each table to be loaded" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Script FK.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{06a110bd-d720-402c-af24-ce2302f731fd}"
+          DTS:From="Package\Script FK\Alter ETL_SCRIPT_FOREIGN_KEYS procedure"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Script FK\Get Tables to Load" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{0E527D5B-4180-4CC3-83E1-48D55F3EF21B}"
+      DTS:From="Package\Initialize"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Script FK" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{7B329F2F-D322-4F78-8EFF-9F50BC8D0632}"
+      DTS:From="Package\Script FK"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Drop FK" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{16FE33CD-E489-4EBC-9B70-1DECB561548A}"
+      DTS:From="Package\Drop FK"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Add FK" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Add FK\Add FKs for each table\Add FK"
+          TopLeft="53.8867924528302,33.6792452830189" />
+        <ContainerLayout
+          HeaderHeight="43.924528301886795"
+          IsExpanded="True"
+          PanelSize="254,118"
+          Size="254,162"
+          Id="Package\Add FK\Add FKs for each table"
+          TopLeft="66.75,114.037735849057" />
+        <NodeLayout
+          Size="219,44"
+          Id="Package\Add FK\Get Add FK scripts"
+          TopLeft="81.0754716981132,21.5" />
+        <EdgeLayout
+          Id="Package\Add FK.PrecedenceConstraints[Constraint 3]"
+          TopLeft="192.162735849057,65.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.5377358490566"
+              Start="0,0"
+              End="0,41.0377358490566">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0377358490566" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="372,331"
+          Size="372,374"
+          Id="Package\Add FK"
+          TopLeft="380.25,1680.5" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Drop FK\Drop FKs for each table\Drop FK"
+          TopLeft="70.8679245283019,25.7169811320755" />
+        <ContainerLayout
+          HeaderHeight="43.924528301886795"
+          IsExpanded="True"
+          PanelSize="286,106"
+          Size="286,150"
+          Id="Package\Drop FK\Drop FKs for each table"
+          TopLeft="32.75,104.037735849057" />
+        <NodeLayout
+          Size="216,44"
+          Id="Package\Drop FK\Get Drop FK scripts"
+          TopLeft="67.6933962264151,14" />
+        <EdgeLayout
+          Id="Package\Drop FK.PrecedenceConstraints[Constraint 3]"
+          TopLeft="175.504716981132,57.9245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.1132075471699"
+              Start="0,0"
+              End="0,38.6132075471699">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.6132075471699" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="386,309"
+          Size="386,352"
+          Id="Package\Drop FK"
+          TopLeft="373,1263" />
+        <NodeLayout
+          Size="183,42"
+          Id="Package\Initialize\Create customer table"
+          TopLeft="41,296" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Initialize\Create lookup table"
+          TopLeft="43,211" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Initialize\Create tables"
+          TopLeft="51,40" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Initialize\Populate tables"
+          TopLeft="46,124" />
+        <EdgeLayout
+          Id="Package\Initialize.PrecedenceConstraints[Constraint]"
+          TopLeft="121.5,82">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initialize.PrecedenceConstraints[Constraint 1]"
+          TopLeft="125,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Initialize.PrecedenceConstraints[Constraint 2]"
+          TopLeft="130.5,253">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43"
+              Start="0,0"
+              End="0,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="248,396"
+          Size="248,439"
+          Id="Package\Initialize"
+          TopLeft="442,49.25" />
+        <NodeLayout
+          Size="327,48"
+          Id="Package\Script FK\Alter ETL_SCRIPT_FOREIGN_KEYS procedure"
+          TopLeft="85.1509433962264,229.174528301887" />
+        <NodeLayout
+          Size="334,44"
+          Id="Package\Script FK\Create ETL_SCRIPT_FOREIGN_KEYS placeholder"
+          TopLeft="84.2075471698113,137.325471698113" />
+        <NodeLayout
+          Size="330,42"
+          Id="Package\Script FK\Create or Truncate ETL_FOREIGN_KEY_SCRIPT table"
+          TopLeft="84.0943396226415,46.25" />
+        <NodeLayout
+          Size="189,44"
+          Id="Package\Script FK\Get Tables to Load"
+          TopLeft="156.943396226415,331.665094339623" />
+        <NodeLayout
+          Size="197,44"
+          Id="Package\Script FK\Process each table to be loaded\Script Drop and Add FKs"
+          TopLeft="38.8679245283019,28.8113207547169" />
+        <ContainerLayout
+          HeaderHeight="43.924528301886795"
+          IsExpanded="True"
+          PanelSize="278,105"
+          Size="278,149"
+          Id="Package\Script FK\Process each table to be loaded"
+          TopLeft="109,429.683962264151" />
+        <EdgeLayout
+          Id="Package\Script FK.PrecedenceConstraints[Constraint 1]"
+          TopLeft="250.150943396226,88.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.0754716981132"
+              Start="0,0"
+              End="0,41.5754716981132">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5754716981132" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Script FK.PrecedenceConstraints[Constraint 1 1]"
+          TopLeft="249.929245283019,181.325471698113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.8490566037738"
+              Start="0,0"
+              End="0,40.3490566037738">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.3490566037738" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Script FK.PrecedenceConstraints[Constraint 2]"
+          TopLeft="249.721698113207,375.665094339623">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.018867924528"
+              Start="0,0"
+              End="0,46.518867924528">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.518867924528" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Script FK.PrecedenceConstraints[Constraint 3]"
+          TopLeft="250.047169811321,277.174528301887">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54.490566037736"
+              Start="0,0"
+              End="0,46.990566037736">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.990566037736" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="447,629"
+          Size="447,672"
+          Id="Package\Script FK"
+          TopLeft="337.75,539.75" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="563.625,488.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.5"
+              Start="0,0"
+              End="0,44">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="563.625,1211.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.25"
+              Start="0,0"
+              End="0,43.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="566.125,1615">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.5"
+              Start="0,0"
+              End="0,58">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
