@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{5626E9F7-9341-4D5A-85C0-16D7CA34EA14}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{6D1B0173-D0C6-40CF-B955-3BCDBAEBCF04}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -219,12 +219,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{4D0F81E5-E8BD-4F4F-9635-77A6747A4113}"
-              SQLTask:SqlStatementSource="SELECT [SCRIPT]&#xA;FROM dbo.ETL_FOREIGN_KEY_SCRIPT&#xA;WHERE [COMMAND] = 'DROP'"
-              SQLTask:ResultType="ResultSetType_Rowset" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
-              <SQLTask:ResultBinding
-                SQLTask:ResultName="0"
-                SQLTask:DtsVariableName="User::SCRIPT_LIST" />
-            </SQLTask:SqlTaskData>
+              SQLTask:SqlStatementSource="SELECT [SCRIPT]&#xA;FROM dbo.ETL_FOREIGN_KEY_SCRIPT&#xA;WHERE [COMMAND] = 'DROP'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
       </DTS:Executables>
@@ -439,6 +434,7 @@
           DTS:refId="Package\Script FK\Process each table to be loaded"
           DTS:CreationName="STOCK:FOREACHLOOP"
           DTS:Description="Foreach Loop Container"
+          DTS:Disabled="True"
           DTS:DTSID="{4debc4b3-cade-46a2-97fb-72d6c0aac4cf}"
           DTS:ExecutableType="STOCK:FOREACHLOOP"
           DTS:LocaleID="-1"
