@@ -1,0 +1,1402 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/8/2021 12:19:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MAN"
+  DTS:CreatorName="MAN\MAN"
+  DTS:DTSID="{6B8E65E0-85BD-4F35-BBF2-EE02D24BC6BF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.167"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{6AAD0649-F235-46A5-A4D9-FDBE0CF943C9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MAN.AdventureWorks2012]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CA1F7CA8-AC8C-458E-AEC7-F7E448083B82}"
+      DTS:ObjectName="MAN.AdventureWorks2012">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MAN;Initial Catalog=AdventureWorks2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container run"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{642D5394-A25A-454E-90A9-598884D799A7}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container run">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container run\Data Flow Task run time switch"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{DC5E7CC8-085B-4CFC-8AF4-3CFDE1A6B807}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task run time switch"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT ? = StagingFlowNr FROM dbo.ETLswitchConfig WHERE ID = 1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[MAN.AdventureWorks2012]"
+                      connectionManagerRefId="Package.ConnectionManagers[MAN.AdventureWorks2012]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Inputs[OLE DB Command Input].Columns[X]"
+                          cachedDataType="i4"
+                          cachedName="X"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[X]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="i4"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">82</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM dbo.SalesOrderDetail ORDER BY SalesOrderDetailID</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[MAN.AdventureWorks2012]"
+                      connectionManagerRefId="Package.ConnectionManagers[MAN.AdventureWorks2012]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesOrderID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesOrderID]"
+                          name="SalesOrderID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesOrderDetailID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderDetailID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesOrderDetailID]"
+                          name="SalesOrderDetailID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[CarrierTrackingNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CarrierTrackingNumber]"
+                          length="50"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[CarrierTrackingNumber]"
+                          name="CarrierTrackingNumber"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderQty]"
+                          dataType="i2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderQty]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderQty]"
+                          name="OrderQty"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]"
+                          name="ProductID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialOfferID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SpecialOfferID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialOfferID]"
+                          name="SpecialOfferID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                          name="UnitPrice"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPriceDiscount]"
+                          dataType="cy"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPriceDiscount]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPriceDiscount]"
+                          name="UnitPriceDiscount"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineTotal]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LineTotal]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineTotal]"
+                          name="LineTotal"
+                          precision="38"
+                          scale="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]"
+                          name="ModifiedDate"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[X]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[X]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[X]"
+                          name="X"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderID]"
+                          dataType="i4"
+                          name="SalesOrderID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SalesOrderDetailID]"
+                          dataType="i4"
+                          name="SalesOrderDetailID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CarrierTrackingNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CarrierTrackingNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OrderQty]"
+                          dataType="i2"
+                          name="OrderQty" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                          dataType="i4"
+                          name="ProductID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SpecialOfferID]"
+                          dataType="i4"
+                          name="SpecialOfferID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                          dataType="cy"
+                          name="UnitPrice" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UnitPriceDiscount]"
+                          dataType="cy"
+                          name="UnitPriceDiscount" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LineTotal]"
+                          dataType="numeric"
+                          name="LineTotal"
+                          precision="38"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ModifiedDate]"
+                          dataType="dbTimeStamp"
+                          name="ModifiedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[X]"
+                          dataType="i4"
+                          name="X" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesOrderID]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesOrderID]"
+                          name="SalesOrderID" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesOrderDetailID]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SalesOrderDetailID]"
+                          name="SalesOrderDetailID" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CarrierTrackingNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CarrierTrackingNumber]"
+                          name="CarrierTrackingNumber" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderQty]"
+                          dataType="i2"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OrderQty]"
+                          name="OrderQty" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                          name="ProductID" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SpecialOfferID]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SpecialOfferID]"
+                          name="SpecialOfferID" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                          dataType="cy"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                          name="UnitPrice" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPriceDiscount]"
+                          dataType="cy"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UnitPriceDiscount]"
+                          name="UnitPriceDiscount" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LineTotal]"
+                          dataType="numeric"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LineTotal]"
+                          name="LineTotal"
+                          precision="38"
+                          scale="6" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ModifiedDate]"
+                          name="ModifiedDate" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[X]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[X]"
+                          name="X" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="stage 1"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SalesOrderDetailStg1]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[MAN.AdventureWorks2012]"
+                      connectionManagerRefId="Package.ConnectionManagers[MAN.AdventureWorks2012]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].Columns[SalesOrderID]"
+                          cachedDataType="i4"
+                          cachedName="SalesOrderID"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesOrderID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].Columns[SalesOrderDetailID]"
+                          cachedDataType="i4"
+                          cachedName="SalesOrderDetailID"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderDetailID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesOrderDetailID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].Columns[CarrierTrackingNumber]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CarrierTrackingNumber"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[CarrierTrackingNumber]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[CarrierTrackingNumber]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].Columns[OrderQty]"
+                          cachedDataType="i2"
+                          cachedName="OrderQty"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[OrderQty]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderQty]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                          cachedDataType="i4"
+                          cachedName="ProductID"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].Columns[SpecialOfferID]"
+                          cachedDataType="i4"
+                          cachedName="SpecialOfferID"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[SpecialOfferID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialOfferID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                          cachedDataType="cy"
+                          cachedName="UnitPrice"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].Columns[UnitPriceDiscount]"
+                          cachedDataType="cy"
+                          cachedName="UnitPriceDiscount"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[UnitPriceDiscount]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPriceDiscount]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].Columns[LineTotal]"
+                          cachedDataType="numeric"
+                          cachedName="LineTotal"
+                          cachedPrecision="38"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineTotal]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ModifiedDate"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].Columns[X]"
+                          cachedDataType="i4"
+                          cachedName="X"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[X]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[X]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
+                          dataType="i4"
+                          name="SalesOrderID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderDetailID]"
+                          dataType="i4"
+                          name="SalesOrderDetailID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[CarrierTrackingNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CarrierTrackingNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[OrderQty]"
+                          dataType="i2"
+                          name="OrderQty" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                          dataType="i4"
+                          name="ProductID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[SpecialOfferID]"
+                          dataType="i4"
+                          name="SpecialOfferID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                          dataType="cy"
+                          name="UnitPrice" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[UnitPriceDiscount]"
+                          dataType="cy"
+                          name="UnitPriceDiscount" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
+                          dataType="numeric"
+                          name="LineTotal"
+                          precision="38"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                          dataType="dbTimeStamp"
+                          name="ModifiedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input].ExternalColumns[X]"
+                          dataType="i4"
+                          name="X" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="stage 2"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[SalesOrderDetailStg2]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[MAN.AdventureWorks2012]"
+                      connectionManagerRefId="Package.ConnectionManagers[MAN.AdventureWorks2012]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].Columns[SalesOrderID]"
+                          cachedDataType="i4"
+                          cachedName="SalesOrderID"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesOrderID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].Columns[SalesOrderDetailID]"
+                          cachedDataType="i4"
+                          cachedName="SalesOrderDetailID"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderDetailID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SalesOrderDetailID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].Columns[CarrierTrackingNumber]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="CarrierTrackingNumber"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[CarrierTrackingNumber]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[CarrierTrackingNumber]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].Columns[OrderQty]"
+                          cachedDataType="i2"
+                          cachedName="OrderQty"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[OrderQty]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[OrderQty]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].Columns[ProductID]"
+                          cachedDataType="i4"
+                          cachedName="ProductID"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[ProductID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].Columns[SpecialOfferID]"
+                          cachedDataType="i4"
+                          cachedName="SpecialOfferID"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[SpecialOfferID]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[SpecialOfferID]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                          cachedDataType="cy"
+                          cachedName="UnitPrice"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].Columns[UnitPriceDiscount]"
+                          cachedDataType="cy"
+                          cachedName="UnitPriceDiscount"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[UnitPriceDiscount]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[UnitPriceDiscount]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].Columns[LineTotal]"
+                          cachedDataType="numeric"
+                          cachedName="LineTotal"
+                          cachedPrecision="38"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[LineTotal]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].Columns[ModifiedDate]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="ModifiedDate"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[ModifiedDate]" />
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].Columns[X]"
+                          cachedDataType="i4"
+                          cachedName="X"
+                          externalMetadataColumnId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[X]"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[X]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderID]"
+                          dataType="i4"
+                          name="SalesOrderID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[SalesOrderDetailID]"
+                          dataType="i4"
+                          name="SalesOrderDetailID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[CarrierTrackingNumber]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CarrierTrackingNumber" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[OrderQty]"
+                          dataType="i2"
+                          name="OrderQty" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                          dataType="i4"
+                          name="ProductID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[SpecialOfferID]"
+                          dataType="i4"
+                          name="SpecialOfferID" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                          dataType="cy"
+                          name="UnitPrice" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[UnitPriceDiscount]"
+                          dataType="cy"
+                          name="UnitPriceDiscount" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[LineTotal]"
+                          dataType="numeric"
+                          name="LineTotal"
+                          precision="38"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[ModifiedDate]"
+                          dataType="dbTimeStamp"
+                          name="ModifiedDate" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input].ExternalColumns[X]"
+                          dataType="i4"
+                          name="X" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2"
+                  componentClassID="Microsoft.ConditionalSplit"
+                  contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+                  name="Stagging 1_2"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Inputs[Conditional Split Input]"
+                      description="Input to the Conditional Split Transformation"
+                      name="Conditional Split Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Inputs[Conditional Split Input].Columns[X]"
+                          cachedDataType="i4"
+                          cachedName="X"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[X]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Outputs[Staging 1]"
+                      description="Output 1 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Staging 1"
+                      synchronousInputId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[X]} == 1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">X == 1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">0</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Outputs[Staging 2]"
+                      description="Output 2 of the Conditional Split Transformation"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      exclusionGroup="1"
+                      name="Staging 2"
+                      synchronousInputId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Inputs[Conditional Split Input]"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                          name="Expression">#{Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output].Columns[X]} == 2</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Specifies the friendly version of the expression. This expression version uses column names."
+                          expressionType="Notify"
+                          name="FriendlyExpression">X == 2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                          name="EvaluationOrder">1</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Outputs[Conditional Split Default Output]"
+                      description="Default Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      name="Conditional Split Default Output"
+                      synchronousInputId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Inputs[Conditional Split Input]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          name="IsDefaultOut">true</property>
+                      </properties>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Outputs[Conditional Split Error Output]"
+                      description="Error Output of the Conditional Split Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Conditional Split Error Output"
+                      synchronousInputId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Inputs[Conditional Split Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container run\Data Flow Task run time switch.Paths[OLE DB Command Output]"
+                  endId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Inputs[Conditional Split Input]"
+                  name="OLE DB Command Output"
+                  startId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\Sequence Container run\Data Flow Task run time switch.Paths[OLE DB Source Output]"
+                  endId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Sequence Container run\Data Flow Task run time switch.Paths[Staging 1]"
+                  endId="Package\Sequence Container run\Data Flow Task run time switch\stage 1.Inputs[OLE DB Destination Input]"
+                  name="Staging 1"
+                  startId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Outputs[Staging 1]" />
+                <path
+                  refId="Package\Sequence Container run\Data Flow Task run time switch.Paths[Staging 2]"
+                  endId="Package\Sequence Container run\Data Flow Task run time switch\stage 2.Inputs[OLE DB Destination Input]"
+                  name="Staging 2"
+                  startId="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2.Outputs[Staging 2]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container run\Final"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{1D52D22F-DE7D-4051-9F1C-32D206935483}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Final"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CA1F7CA8-AC8C-458E-AEC7-F7E448083B82}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="UPDATE dbo.ETLswitchConfig  SET &#xA;ETLstatus ='STOP' ,&#xA;ETLstop =getdate(),&#xA;ETLrunTime =datediff(ss, ETLstart, getdate())&#xA;WHERE ID =1 ;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container run\Initial"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{3BF74F4D-7F70-4764-9F8E-6FE24892AB41}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Initial"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CA1F7CA8-AC8C-458E-AEC7-F7E448083B82}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.SalesOrderDetailStg1;&#xA;TRUNCATE TABLE dbo.SalesOrderDetailStg2;&#xA;TRUNCATE TABLE dbo.SalesOrderDetailHist;&#xA;TRUNCATE TABLE dbo.ETLswitchLog;&#xA;&#xA;UPDATE dbo.ETLswitchConfig  SET &#xA;StagingFlowNR = 1, &#xA;ETLstart =getdate(), &#xA;ETLstop =NULL,&#xA;ETLrunTime =0,&#xA;ETLstatus ='START' ,&#xA;RecordsTransferred =0,&#xA;SourceRecordsNumber =(SELECT count(1) from dbo.SalesOrderDetail )&#xA;WHERE ID =1 ;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container run\Start Control"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{20E3478A-E780-47D8-BCEA-245BB303DC9A}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Start Control"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{CA1F7CA8-AC8C-458E-AEC7-F7E448083B82}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="exec dbo.DFswitch" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container run.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{33D02A1C-B7CC-4E34-9889-6DC27D6A805A}"
+          DTS:From="Package\Sequence Container run\Initial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container run\Data Flow Task run time switch" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container run.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{ABBB84D1-FB58-49A5-8E4A-792AC5199AD3}"
+          DTS:From="Package\Sequence Container run\Data Flow Task run time switch"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container run\Final" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container run.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{5673AEAA-8EC5-454C-A340-F109A7922380}"
+          DTS:From="Package\Sequence Container run\Initial"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence Container run\Start Control" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Sequence Container run\Data Flow Task run time switch"
+          TopLeft="38,98" />
+        <NodeLayout
+          Size="101,42"
+          Id="Package\Sequence Container run\Final"
+          TopLeft="97,176" />
+        <NodeLayout
+          Size="105,42"
+          Id="Package\Sequence Container run\Initial"
+          TopLeft="97,19" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Sequence Container run\Start Control"
+          TopLeft="322,16" />
+        <EdgeLayout
+          Id="Package\Sequence Container run.PrecedenceConstraints[Constraint]"
+          TopLeft="150.5,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37"
+              Start="0,0"
+              End="0,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container run.PrecedenceConstraints[Constraint 1]"
+          TopLeft="149.5,140">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container run.PrecedenceConstraints[Constraint 2]"
+          TopLeft="202,38.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120,0"
+              Start="0,0"
+              End="112.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="112.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="536,275"
+          Size="536,318"
+          Id="Package\Sequence Container run"
+          TopLeft="361,66" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container run\Data Flow Task run time switch">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source"
+          TopLeft="572,72" />
+        <NodeLayout
+          Size="114,42"
+          Id="Package\Sequence Container run\Data Flow Task run time switch\stage 2"
+          TopLeft="742,337" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Command"
+          TopLeft="567,155" />
+        <NodeLayout
+          Size="114,42"
+          Id="Package\Sequence Container run\Data Flow Task run time switch\stage 1"
+          TopLeft="436,338" />
+        <EdgeLayout
+          Id="Package\Sequence Container run\Data Flow Task run time switch.Paths[OLE DB Source Output]"
+          TopLeft="648.5,114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Sequence Container run\Data Flow Task run time switch\Stagging 1_2"
+          TopLeft="576,242" />
+        <EdgeLayout
+          Id="Package\Sequence Container run\Data Flow Task run time switch.Paths[OLE DB Command Output]"
+          TopLeft="648.25,197">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container run\Data Flow Task run time switch.Paths[Staging 1]"
+          TopLeft="624.333333333333,284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-131.333333333333,54"
+              Start="0,0"
+              End="-131.333333333333,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9635343618513" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.9635343618513"
+                    Point2="0,21.9635343618513"
+                    Point3="-4,21.9635343618513" />
+                  <mssgle:LineSegment
+                    End="-127.333333333333,21.9635343618513" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-127.333333333333,21.9635343618513"
+                    Point2="-131.333333333333,21.9635343618513"
+                    Point3="-131.333333333333,25.9635343618513" />
+                  <mssgle:LineSegment
+                    End="-131.333333333333,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-86.9128971354167,26.9635343618513,42.4924609375,11.4677734375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container run\Data Flow Task run time switch.Paths[Staging 2]"
+          TopLeft="668.666666666667,284">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="130.333333333333,53"
+              Start="0,0"
+              End="130.333333333333,45.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5568022440393" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5568022440393"
+                    Point2="0,21.5568022440393"
+                    Point3="4,21.5568022440393" />
+                  <mssgle:LineSegment
+                    End="126.333333333333,21.5568022440393" />
+                  <mssgle:CubicBezierSegment
+                    Point1="126.333333333333,21.5568022440393"
+                    Point2="130.333333333333,21.5568022440393"
+                    Point3="130.333333333333,25.5568022440393" />
+                  <mssgle:LineSegment
+                    End="130.333333333333,45.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="43.7348893229167,26.5568022440393,42.8635546875,11.4873046875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container run\Data Flow Task run time switch\stage 2">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container run\Data Flow Task run time switch\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container run\Data Flow Task run time switch\stage 1">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

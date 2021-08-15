@@ -69,6 +69,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Error_Messages", "SSIS\Exam
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "BatchProcessingSqlServer", "SSIS\Examples\BatchProcessingSqlServer\BatchProcessingSqlServer.dtproj", "{939EB982-549B-449D-AFBC-3657BD0C17CF}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Data Flow Parallel Processing", "SSIS\Examples\Data Flow Parallel Processing\Data Flow Parallel Processing.dtproj", "{B8240B2F-18B5-4C28-A744-9049C9806C9F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -316,6 +318,14 @@ Global
 		{939EB982-549B-449D-AFBC-3657BD0C17CF}.Development|Default.Build.0 = Development
 		{939EB982-549B-449D-AFBC-3657BD0C17CF}.Release|Default.ActiveCfg = Development
 		{939EB982-549B-449D-AFBC-3657BD0C17CF}.Release|Default.Build.0 = Development
+		{B8240B2F-18B5-4C28-A744-9049C9806C9F}.Debug|Default.ActiveCfg = Development
+		{B8240B2F-18B5-4C28-A744-9049C9806C9F}.Debug|Default.Build.0 = Development
+		{B8240B2F-18B5-4C28-A744-9049C9806C9F}.DebugLocal|Default.ActiveCfg = Development
+		{B8240B2F-18B5-4C28-A744-9049C9806C9F}.DebugLocal|Default.Build.0 = Development
+		{B8240B2F-18B5-4C28-A744-9049C9806C9F}.Development|Default.ActiveCfg = Development
+		{B8240B2F-18B5-4C28-A744-9049C9806C9F}.Development|Default.Build.0 = Development
+		{B8240B2F-18B5-4C28-A744-9049C9806C9F}.Release|Default.ActiveCfg = Development
+		{B8240B2F-18B5-4C28-A744-9049C9806C9F}.Release|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -351,6 +361,7 @@ Global
 		{1556E1D1-7937-4EE7-B0F6-584D1E60D2DA} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{F1E61D3C-1C3C-4EB5-ABAC-5C3E8329445B} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{939EB982-549B-449D-AFBC-3657BD0C17CF} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{B8240B2F-18B5-4C28-A744-9049C9806C9F} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
