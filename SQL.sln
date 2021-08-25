@@ -75,6 +75,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS_Connect_WebService", "
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Analisys_SSIS_Lookup", "SSIS\Examples\Analisys_SSIS_Lookup\Analisys_SSIS_Lookup.dtproj", "{4AC64C0C-A6D9-4408-BBB4-AB2B327ABD3C}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Zip_Unzip_File_SSIS", "SSIS\Examples\Zip_Unzip_File_SSIS\Zip_Unzip_File_SSIS.dtproj", "{046946F7-89A1-4860-8DA0-78805E67B871}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -346,6 +348,14 @@ Global
 		{4AC64C0C-A6D9-4408-BBB4-AB2B327ABD3C}.Development|Default.Build.0 = Development
 		{4AC64C0C-A6D9-4408-BBB4-AB2B327ABD3C}.Release|Default.ActiveCfg = Development
 		{4AC64C0C-A6D9-4408-BBB4-AB2B327ABD3C}.Release|Default.Build.0 = Development
+		{046946F7-89A1-4860-8DA0-78805E67B871}.Debug|Default.ActiveCfg = Development
+		{046946F7-89A1-4860-8DA0-78805E67B871}.Debug|Default.Build.0 = Development
+		{046946F7-89A1-4860-8DA0-78805E67B871}.DebugLocal|Default.ActiveCfg = Development
+		{046946F7-89A1-4860-8DA0-78805E67B871}.DebugLocal|Default.Build.0 = Development
+		{046946F7-89A1-4860-8DA0-78805E67B871}.Development|Default.ActiveCfg = Development
+		{046946F7-89A1-4860-8DA0-78805E67B871}.Development|Default.Build.0 = Development
+		{046946F7-89A1-4860-8DA0-78805E67B871}.Release|Default.ActiveCfg = Development
+		{046946F7-89A1-4860-8DA0-78805E67B871}.Release|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -384,6 +394,7 @@ Global
 		{B8240B2F-18B5-4C28-A744-9049C9806C9F} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{0086F1B6-55E4-4E58-B689-4AA36998FE5D} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{4AC64C0C-A6D9-4408-BBB4-AB2B327ABD3C} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{046946F7-89A1-4860-8DA0-78805E67B871} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
