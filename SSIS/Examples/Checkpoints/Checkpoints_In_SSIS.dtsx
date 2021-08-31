@@ -7,12 +7,12 @@
   DTS:CreatorName="MAN\MAN"
   DTS:DTSID="{2CFDEACC-AB55-4708-A7C1-A2D736485BCD}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{718F37EC-AB12-4EA6-A458-8CA8433A67DB}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{4FE93238-3F24-4FB7-806A-F9FC0FAE1FDF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -95,7 +95,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[People]</property>
+                  name="OpenRowset">[People]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -165,19 +165,9 @@
                       cachedName="LastName"
                       externalMetadataColumnId="Package\Load person data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastName]"
                       lineageId="Package\Load person data\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastName]" />
-                    <inputColumn
-                      refId="Package\Load person data\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[BusinessEntityID]"
-                      cachedDataType="i4"
-                      cachedName="BusinessEntityID"
-                      externalMetadataColumnId="Package\Load person data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
-                      lineageId="Package\Load person data\OLE DB Source.Outputs[OLE DB Source Output].Columns[BusinessEntityID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load person data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
-                      dataType="i4"
-                      name="PersonID" />
                     <externalMetadataColumn
                       refId="Package\Load person data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FirstName]"
                       dataType="wstr"
@@ -188,6 +178,10 @@
                       dataType="wstr"
                       length="50"
                       name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Load person data\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PersonID]"
+                      dataType="i4"
+                      name="PersonID" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -648,27 +642,39 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171,42"
+          Size="170.4,41.6"
           Id="Package\Create people table"
-          TopLeft="512,36" />
+          TopLeft="474.244897316218,39.2773109703328" />
         <NodeLayout
-          Size="142,42"
+          Size="163.2,41.6"
+          Id="Package\Drop people table"
+          TopLeft="492.244897316218,405.277310970333" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Load person data"
+          TopLeft="487.244897316218,313.277310970333" />
+        <NodeLayout
+          Size="142.4,41.6"
           Id="Package\Retrieve data"
-          TopLeft="528,126" />
+          TopLeft="490.244897316218,129.277310970333" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\Set variable value"
+          TopLeft="486.244897316218,219.277310970333" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="598.25,78">
+          TopLeft="560.444897316218,80.8773109703328">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48"
+              EndConnector="0,48.4000000000002"
               Start="0,0"
-              End="0,40.5">
+              End="0,40.9000000000002">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
+                    End="0,40.9000000000002" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -677,13 +683,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="162,42"
-          Id="Package\Set variable value"
-          TopLeft="524,216" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="602,168">
+          TopLeft="564.244897316218,171.277310970333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -703,13 +705,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Load person data"
-          TopLeft="525,310" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="605.25,258">
+          TopLeft="567.494897316218,261.277310970333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -729,13 +727,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Drop people table"
-          TopLeft="530,402" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="608.5,352">
+          TopLeft="570.744897316218,355.277310970333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -764,11 +758,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Load person data\OLE DB Source"
           TopLeft="470,58" />
         <NodeLayout
-          Size="171,42"
+          Size="171.2,41.6"
           Id="Package\Load person data\OLE DB Destination"
           TopLeft="462,141" />
         <EdgeLayout
@@ -797,7 +791,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load person data\OLE DB Source">
+    design-time-name="Package\Load person data\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -810,7 +804,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load person data\OLE DB Destination">
+    design-time-name="Package\Load person data\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

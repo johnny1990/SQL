@@ -7,12 +7,12 @@
   DTS:CreatorName="MAN\MAN"
   DTS:DTSID="{9496CEA2-758B-4362-9D53-CC5C664C8B8B}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{4D71240E-32A9-4863-8BA8-257F53ED0B29}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{C280A720-930E-4ED5-84CF-861F9CA5444D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -386,18 +386,18 @@ WHERE JobTitle = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Execute SQL Task"
           TopLeft="514,41" />
         <NodeLayout
-          Size="151,42"
+          Size="151.2,41.6"
           Id="Package\Foreach Loop Container\Data Flow Task"
           TopLeft="60,32" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="260,130"
-          Size="260,173"
+          PanelSize="260,129.6"
+          Size="260,172.8"
           Id="Package\Foreach Loop Container"
           TopLeft="467,135" />
         <EdgeLayout
@@ -431,13 +431,13 @@ WHERE JobTitle = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="171,42"
-          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
-          TopLeft="467,125" />
-        <NodeLayout
-          Size="150,42"
+          Size="150.4,41.6"
           Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Source"
           TopLeft="479,37" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Foreach Loop Container\Data Flow Task\OLE DB Destination"
+          TopLeft="467,125" />
         <EdgeLayout
           Id="Package\Foreach Loop Container\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="553.25,79">
