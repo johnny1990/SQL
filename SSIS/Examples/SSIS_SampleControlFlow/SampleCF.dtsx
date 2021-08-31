@@ -7,12 +7,12 @@
   DTS:CreatorName="MAN\MAN"
   DTS:DTSID="{AB7883EC-9E3F-4526-8C96-53E1211A0F36}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{4463909A-EF70-4E69-B3E3-95AC170B3CA4}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{091237A0-8144-48A0-A0CF-68B95E8A3DCA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1291,16 +1291,24 @@ order by o.order_id asc</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="186,42"
+          Size="185.6,41.6"
           Id="Package\Clean destination table"
-          TopLeft="530,21" />
+          TopLeft="324.999996508871,30.1764707169318" />
         <NodeLayout
-          Size="245,42"
+          Size="231.2,41.6"
+          Id="Package\Test delete data condition query"
+          TopLeft="305.999996508871,209.176470716932" />
+        <NodeLayout
+          Size="244.8,41.6"
           Id="Package\Transfer data into destination table"
-          TopLeft="502,108" />
+          TopLeft="296.999996508871,117.176470716932" />
+        <NodeLayout
+          Size="160.8,41.6"
+          Id="Package\Write into flat file"
+          TopLeft="339.999996508871,300.176470716932" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="623.75,63">
+          TopLeft="418.749996508871,72.1764707169318">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1320,17 +1328,9 @@ order by o.order_id asc</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="231,42"
-          Id="Package\Test delete data condition query"
-          TopLeft="511,200" />
-        <NodeLayout
-          Size="161,42"
-          Id="Package\Write into flat file"
-          TopLeft="545,291" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="625.5,150">
+          TopLeft="420.499996508871,159.176470716932">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1352,7 +1352,7 @@ order by o.order_id asc</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="626,242">
+          TopLeft="420.999996508871,251.176470716932">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
