@@ -7,12 +7,12 @@
   DTS:CreatorName="MAN\MAN"
   DTS:DTSID="{4F27EBA9-5854-4127-B072-704B3CADCCF4}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="15.0.2000.166"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{3A0BDCF4-10DF-40ED-B5C1-2A28D82F5A7D}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{3BE55B2A-D99D-4442-8C2F-75DF09267A45}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1073,11 +1073,15 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="174,42"
+          Size="238.4,44"
+          Id="Package\Display staging table contents"
+          TopLeft="351.749998616321,476.955882366347" />
+        <NodeLayout
+          Size="174.4,41.6"
           Id="Package\Foreach Loop Container\Display XML records"
           TopLeft="50,25" />
         <NodeLayout
-          Size="240,42"
+          Size="240,41.6"
           Id="Package\Foreach Loop Container\Insert XML rows into staging table"
           TopLeft="19,114" />
         <EdgeLayout
@@ -1105,21 +1109,21 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="303,184"
-          Size="303,227"
+          PanelSize="303.2,184"
+          Size="303.2,227.2"
           Id="Package\Foreach Loop Container"
-          TopLeft="406,199" />
+          TopLeft="324.749998616321,200.955882366347" />
         <NodeLayout
-          Size="157,42"
+          Size="156.8,41.6"
           Id="Package\Process XML File"
-          TopLeft="474,110" />
+          TopLeft="392.749998616321,111.955882366347" />
         <NodeLayout
-          Size="147,42"
+          Size="147.2,41.6"
           Id="Package\Truncate table"
-          TopLeft="476,23" />
+          TopLeft="394.749998616321,24.9558823663471" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="551,65">
+          TopLeft="469.749998616321,66.9558823663471">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1141,7 +1145,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="555,152">
+          TopLeft="473.749998616321,153.955882366347">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1161,13 +1165,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="238,44"
-          Id="Package\Display staging table contents"
-          TopLeft="433,475" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="554.75,426">
+          TopLeft="473.499998616321,427.955882366347">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
