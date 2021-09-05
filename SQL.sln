@@ -79,6 +79,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Zip_Unzip_File_SSIS", "SSIS
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Excel_SSIS_Automation", "SSIS\Examples\Excel_SSIS_Automation\Excel_SSIS_Automation.dtproj", "{0AA6029F-2428-4A9E-9ADE-805FE370FF7B}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS_Lookup", "SSIS\Examples\SSIS_Lookup\SSIS_Lookup.dtproj", "{214E0DA5-DB69-412C-A8FB-B17F40189E55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -366,6 +368,14 @@ Global
 		{0AA6029F-2428-4A9E-9ADE-805FE370FF7B}.Development|Default.Build.0 = Development
 		{0AA6029F-2428-4A9E-9ADE-805FE370FF7B}.Release|Default.ActiveCfg = Development
 		{0AA6029F-2428-4A9E-9ADE-805FE370FF7B}.Release|Default.Build.0 = Development
+		{214E0DA5-DB69-412C-A8FB-B17F40189E55}.Debug|Default.ActiveCfg = Development
+		{214E0DA5-DB69-412C-A8FB-B17F40189E55}.Debug|Default.Build.0 = Development
+		{214E0DA5-DB69-412C-A8FB-B17F40189E55}.DebugLocal|Default.ActiveCfg = Development
+		{214E0DA5-DB69-412C-A8FB-B17F40189E55}.DebugLocal|Default.Build.0 = Development
+		{214E0DA5-DB69-412C-A8FB-B17F40189E55}.Development|Default.ActiveCfg = Development
+		{214E0DA5-DB69-412C-A8FB-B17F40189E55}.Development|Default.Build.0 = Development
+		{214E0DA5-DB69-412C-A8FB-B17F40189E55}.Release|Default.ActiveCfg = Development
+		{214E0DA5-DB69-412C-A8FB-B17F40189E55}.Release|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -406,6 +416,7 @@ Global
 		{4AC64C0C-A6D9-4408-BBB4-AB2B327ABD3C} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{046946F7-89A1-4860-8DA0-78805E67B871} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{0AA6029F-2428-4A9E-9ADE-805FE370FF7B} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{214E0DA5-DB69-412C-A8FB-B17F40189E55} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
