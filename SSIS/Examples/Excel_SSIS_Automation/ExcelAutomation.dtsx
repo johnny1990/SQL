@@ -11,21 +11,21 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{E42238E0-ECC6-4F84-80B7-61A7F9813090}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{9F3BA99B-9F2D-4FEF-9685-25D92DEEDD8F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Excel Connection Manager]"
       DTS:CreationName="EXCEL"
-      DTS:DTSID="{8DE61D7C-B661-42ED-9212-E45E63F62896}"
+      DTS:DTSID="{82A96900-F468-4294-8B13-FC394EBFA349}"
       DTS:ObjectName="Excel Connection Manager">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="0"
           DTS:ConnectRetryInterval="0"
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Aplicatii VS\SQL\SQL\SSIS\Examples\Excel_SSIS_Automation\Refresh_Output.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=E:\Aplicatii VS\SQL\SQL\SSIS\Examples\Excel_SSIS_Automation\Refresh_Output.xlsx;Extended Properties=&quot;Excel 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -38,6 +38,16 @@
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
           DTS:ConnectionString="Data Source=MAN;Initial Catalog=AdventureWorks2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Refresh_Output.xlsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{B64015AF-4DE0-4153-BB77-BC9EE28E729E}"
+      DTS:ObjectName="Refresh_Output.xlsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\Aplicatii VS\SQL\SQL\SSIS\Examples\Excel_SSIS_Automation\Refresh_Output.xlsx" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -107,6 +117,8 @@
               <connections>
                 <connection
                   refId="Package\Data Flow Task\Excel Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{E8A9F4E0-64B2-4258-9494-EA7DE383673C}:invalid"
+                  connectionManagerRefId="{E8A9F4E0-64B2-4258-9494-EA7DE383673C}:invalid"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -345,6 +357,21 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FC26FCEB-2860-4B8F-AA00-6D5F6552D892}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\File System Task"
       DTS:CreationName="Microsoft.FileSystemTask"
       DTS:Description="File System Task"
@@ -355,24 +382,10 @@
       DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
-      <DTS:ObjectData />
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Script Task"
-      DTS:CreationName="Microsoft.ScriptTask"
-      DTS:Description="Script Task"
-      DTS:DTSID="{D2F5AA27-D919-4BB2-9289-4AA57AFB6DBF}"
-      DTS:ExecutableType="Microsoft.ScriptTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Script Task"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
       <DTS:ObjectData>
-        <ScriptProject
-          Name="ST_d2cf20f43dfc4c67a8ac4c6e06ca8b37"
-          VSTAMajorVersion="15"
-          VSTAMinorVersion="0"
-          Language="CSharp" />
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{B64015AF-4DE0-4153-BB77-BC9EE28E729E}" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -380,19 +393,19 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{E2710138-A63D-44D8-AF9F-8C0CDD6035F5}"
+      DTS:DTSID="{6141D61F-2E5C-479F-8078-0098B6D89596}"
       DTS:From="Package\File System Task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Data Flow Task" />
+      DTS:To="Package\Execute SQL Task" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{AC5E0576-8976-47EF-A452-DCFD5E835FD1}"
-      DTS:From="Package\Data Flow Task"
+      DTS:DTSID="{9E975A19-0650-42DB-9B33-6C4198A290B2}"
+      DTS:From="Package\Execute SQL Task"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Script Task" />
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Data Flow Task" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -407,31 +420,31 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.4,41.6"
-          Id="Package\Data Flow Task"
-          TopLeft="311.428576732169,129.235295930123" />
-        <NodeLayout
-          Size="156.8,41.6"
+          Size="157,42"
           Id="Package\File System Task"
-          TopLeft="307.857148099919,43.5882359054263" />
+          TopLeft="499.857148099919,50.5882359054263" />
         <NodeLayout
-          Size="130.4,41.6"
-          Id="Package\Script Task"
-          TopLeft="324.285719808267,213.352944168665" />
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="499,142" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task"
+          TopLeft="505.428576732169,234.235295930123" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="386.442862416044,85.1882359054262">
+          TopLeft="579.428574049959,92.5882359054263">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.0470600246966"
+              EndConnector="0,49.4117640945737"
               Start="0,0"
-              End="0,36.5470600246966">
+              End="0,41.9117640945737">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5470600246966" />
+                    End="0,41.9117640945737" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -441,19 +454,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="388.057148270218,170.835295930123">
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="580.714288366084,184">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42.5176482385422"
+              EndConnector="0,50.235295930123"
               Start="0,0"
-              End="0,35.0176482385422">
+              End="0,42.735295930123">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.0176482385422" />
+                    End="0,42.735295930123" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -471,13 +484,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="149.6,41.6"
-          Id="Package\Data Flow Task\OLE DB Source"
-          TopLeft="429.285721596407,43.5882359054262" />
-        <NodeLayout
-          Size="159.2,41.6"
+          Size="159,42"
           Id="Package\Data Flow Task\Excel Destination"
           TopLeft="428.571435869957,130.764707716279" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Data Flow Task\OLE DB Source"
+          TopLeft="429.285721596407,43.5882359054262" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
           TopLeft="506.128578733182,85.1882359054262">
@@ -504,10 +517,15 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Source">
+    design-time-name="Package\Data Flow Task\Excel Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

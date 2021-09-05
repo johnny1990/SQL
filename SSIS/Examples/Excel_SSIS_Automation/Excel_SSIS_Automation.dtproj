@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">MAN</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAemFh17SrPEyNiyWdh4+xoAAAAAACAAAAAAAQZgAAAAEAACAAAAAIqUT59Akeip3HR98qXO1B9RBfIzt2hXbHlOnCOk1ZvgAAAAAOgAAAAAIAACAAAAC1j+g3AvJTFyIyHr9Qtcgv6shUt6eJolboGnZrh+wl35AAAADA/HLUYp95G83prrRjGTutaP42BWb9jPb7Co9exaL4AbSJesJX5ZcO9R0tXM8f3VQAurdua4fdASe2GYDITbU5wGEFPIAuvYjTTiU5TuAybwXuycF35w6XYiTbK953iQmLpSQN80CDw3ECdakxE8RM333jWPHoo5RjsZY5edvwoU5l3TSt2kQq49YjH6onkj9AAAAACv5TBx+psivtsWvqXK754BPudpPZ51fdbkCizYS5IG/DSTFkgX6f8YSwKdQXFxvWnTtMUbPf7Fztkz0BaQKAVQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAemFh17SrPEyNiyWdh4+xoAAAAAACAAAAAAAQZgAAAAEAACAAAACcCfXy8rlUwrdo5NRi7CyUluz3dCaW2PO1bi6LcVGbwAAAAAAOgAAAAAIAACAAAACCpKbwMSFgWIYsJj0YlY2bBh0Y62xouhPlqUspiPqe/ZAAAAAsdo9sVRJ+ztCBsPVkRtSxPYzGU6zCoP7m9s6rRNKMhI2esLp9fcU9QR3mjN+UQpRieDOcaxtbUqP4TQwNt6UahYEMzk2SYs1DViC04weii5Hxn2gJ3EcvPKRkdwGicAsM5IwZ5hw1By8qrlDX5yt/G1Qg86vrMj9eXnVRO/f8DREoAKl4vEN9ogJMcDGYyNRAAAAAkUhSJ/TvJYJ/hW/hqlbvKu8Cbwrs81LYmZbrOAZrhejj9IulMMkRKMvcGSNR8vSDlhKCHN2DWw56MzcEXPAG0A==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,10 +42,10 @@
                 <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">10</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">15</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{EE15EC2F-D3C8-4E1F-BD9B-D603C3BB2A15}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9F3BA99B-9F2D-4FEF-9685-25D92DEEDD8F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -329,6 +329,36 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Refresh_Output.xlsx.ConnectByProxy">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                    <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+                  </SSIS:Properties>
+                </SSIS:Parameter>
+                <SSIS:Parameter SSIS:Name="CM.Refresh_Output.xlsx.ConnectionString">
+                  <SSIS:Properties>
+                    <SSIS:Property SSIS:Name="ID">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="CreationName">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="Description">
+                    </SSIS:Property>
+                    <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">E:\Aplicatii VS\SQL\SQL\SSIS\Examples\Excel_SSIS_Automation\Refresh_Output.xlsx</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
