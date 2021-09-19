@@ -81,6 +81,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Excel_SSIS_Automation", "SS
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS_Lookup", "SSIS\Examples\SSIS_Lookup\SSIS_Lookup.dtproj", "{214E0DA5-DB69-412C-A8FB-B17F40189E55}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SQL_Backup_Reporting", "SSIS\Examples\SQL_Backup_Reporting\SQL_Backup_Reporting.dtproj", "{E648C32C-D712-4177-87B7-697C71992398}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -376,6 +378,14 @@ Global
 		{214E0DA5-DB69-412C-A8FB-B17F40189E55}.Development|Default.Build.0 = Development
 		{214E0DA5-DB69-412C-A8FB-B17F40189E55}.Release|Default.ActiveCfg = Development
 		{214E0DA5-DB69-412C-A8FB-B17F40189E55}.Release|Default.Build.0 = Development
+		{E648C32C-D712-4177-87B7-697C71992398}.Debug|Default.ActiveCfg = Development
+		{E648C32C-D712-4177-87B7-697C71992398}.Debug|Default.Build.0 = Development
+		{E648C32C-D712-4177-87B7-697C71992398}.DebugLocal|Default.ActiveCfg = Development
+		{E648C32C-D712-4177-87B7-697C71992398}.DebugLocal|Default.Build.0 = Development
+		{E648C32C-D712-4177-87B7-697C71992398}.Development|Default.ActiveCfg = Development
+		{E648C32C-D712-4177-87B7-697C71992398}.Development|Default.Build.0 = Development
+		{E648C32C-D712-4177-87B7-697C71992398}.Release|Default.ActiveCfg = Development
+		{E648C32C-D712-4177-87B7-697C71992398}.Release|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -417,6 +427,7 @@ Global
 		{046946F7-89A1-4860-8DA0-78805E67B871} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{0AA6029F-2428-4A9E-9ADE-805FE370FF7B} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{214E0DA5-DB69-412C-A8FB-B17F40189E55} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{E648C32C-D712-4177-87B7-697C71992398} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
