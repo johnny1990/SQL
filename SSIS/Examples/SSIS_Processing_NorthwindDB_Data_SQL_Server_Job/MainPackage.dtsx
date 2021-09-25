@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{13614DE7-B560-46C6-9124-3AA4B5C87994}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{53991CF8-7AF5-4079-85BB-D083E01C0899}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -160,88 +160,41 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph">
-        <AnnotationLayout
-          Text="Main flow Northwind database"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="192,40"
-          Id="edd8867b-74f7-4d9a-bb00-28597530664e"
-          TopLeft="486.785722575626,41.1029417529238" />
-        <NodeLayout
-          Size="151.2,41.6"
-          Id="Package\Truncate tables"
-          TopLeft="498.57143706205,98.6470602070172" />
-        <NodeLayout
-          Size="201.6,41.6"
-          Id="Package\Execute Products Package"
-          TopLeft="480.000008174352,180.470590766326" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="577.485722618201,140.247060207017">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.2235305593088"
-              Start="0,0"
-              End="0,32.7235305593088">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.7235305593088" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="203.2,41.6"
-          Id="Package\Execute Suppliers Package"
-          TopLeft="480.000008174351,266.117650791023" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="581.200008174352,222.070590766326">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.0470600246972"
-              Start="0,0"
-              End="0,36.5470600246972">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,36.5470600246972" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="257.6,41.6"
           Id="Package\Execute Order Orders Details Package"
-          TopLeft="457.857150654404,352.529416708798" />
+          TopLeft="447.142864757655,328.82353402339" />
+        <NodeLayout
+          Size="201.6,41.6"
+          Id="Package\Execute Products Package"
+          TopLeft="469.285722277602,156.764708080919" />
+        <NodeLayout
+          Size="203.2,41.6"
+          Id="Package\Execute Suppliers Package"
+          TopLeft="467.857150824703,243.176473998694" />
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\Send notification final"
+          TopLeft="482.857151080151,412.176476368854" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Truncate tables"
+          TopLeft="490.7142940711,72.647059842377" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="584.128579414378,307.717650791023">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="568.200008174351,114.247059842376">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.8117659177747"
+              EndConnector="0,42.5176482385418"
               Start="0,0"
-              End="0,37.3117659177747">
+              End="0,35.0176482385418">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.3117659177747" />
+                    End="0,35.0176482385418" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -250,13 +203,53 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="180,41.6"
-          Id="Package\Send notification final"
-          TopLeft="493.5714369769,435.882359054262" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="569.771436551153,198.364708080919">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.8117659177748"
+              Start="0,0"
+              End="0,37.3117659177748">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.3117659177748" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="572.700007791179,284.776473998693">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.0470600246971"
+              Start="0,0"
+              End="0,36.5470600246971">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5470600246971" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="585.114293815652,394.129416708798">
+          TopLeft="574.400007918903,370.42353402339">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -276,6 +269,13 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Main flow Northwind database"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="192,40"
+          Id="edd8867b-74f7-4d9a-bb00-28597530664e"
+          TopLeft="476.071436678877,17.3970590675165" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
