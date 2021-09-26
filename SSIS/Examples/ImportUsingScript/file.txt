@@ -1,3 +1,0 @@
-Company,Date,Datasource,Open Price,High Price,Low Price,Average Price 
-Microsoft,2018-03-10,Traders,100.30,140.20,104.35,120.10 
-Amazon,2018-03-10,Traders,120.75,140.23,130.80,130.50 

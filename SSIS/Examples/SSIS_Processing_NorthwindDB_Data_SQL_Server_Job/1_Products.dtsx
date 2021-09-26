@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="1_Products"
   DTS:PackageType="5"
-  DTS:VersionBuild="31"
-  DTS:VersionGUID="{90E89F38-8265-49D5-8D04-C91722B16C96}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{B1719873-25CD-45A4-A2C1-1ADB50380517}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1217,17 +1217,29 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="220,41.6"
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="523.571437487797,494.764712821241" />
+        <NodeLayout
+          Size="220,42"
           Id="Package\Insert final execution package"
           TopLeft="479.285722447902,407.588241010389" />
         <NodeLayout
-          Size="305.6,41.6"
+          Size="223,42"
+          Id="Package\Insert into Final Products table"
+          TopLeft="478.571436721452,320.411769199537" />
+        <NodeLayout
+          Size="306,42"
           Id="Package\Move Products from Northwind to new database"
           TopLeft="435.714293134457,58.1176478739017" />
         <NodeLayout
-          Size="259.2,41.6"
+          Size="259,42"
           Id="Package\Processing Update Products price type"
           TopLeft="456.428579201504,144.529413791677" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Truncate Products table final"
+          TopLeft="487.142865438851,234.000003281762" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="587.271436167981,99.7176478739018">
@@ -1250,14 +1262,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="223.2,41.6"
-          Id="Package\Insert into Final Products table"
-          TopLeft="478.571436721452,320.411769199537" />
-        <NodeLayout
-          Size="213.6,41.6"
-          Id="Package\Truncate Products table final"
-          TopLeft="487.142865438851,234.000003281762" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="589.985722320177,186.129413791677">
@@ -1328,16 +1332,76 @@
           Text="to add Products new processing sql task"
           ParentId="Package"
           FontInfo="{assembly:Null}"
-          Size="241.6,60"
+          Size="242,40"
           Id="344add4d-f8ee-49c5-a214-9a5d3c9372e3"
           TopLeft="712.142869270578,483.294124425077" />
-        <NodeLayout
-          Size="162.4,41.6"
-          Id="Package\Execute SQL Task"
-          TopLeft="523.571437487797,494.764712821241" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
+  <TaskHost
+    design-time-name="Package\Insert into Final Products table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Insert into Final Products table\Products source"
+          TopLeft="466.428579371803,51.2352948362027" />
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\Insert into Final Products table\Product final destination"
+          TopLeft="455.000007748604,138.411766647055" />
+        <EdgeLayout
+          Id="Package\Insert into Final Products table.Paths[OLE DB Source Output]"
+          TopLeft="547.114293560203,92.8352948362027">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5764718108525"
+              Start="0,0"
+              End="0,38.0764718108525">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0764718108525" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert into Final Products table\Product final destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert into Final Products table\Products source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Move Products from Northwind to new database">
     <LayoutInfo>
@@ -1391,70 +1455,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Move Products from Northwind to new database\PRODUCTS source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Insert into Final Products table">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="153.6,41.6"
-          Id="Package\Insert into Final Products table\Products source"
-          TopLeft="466.428579371803,51.2352948362027" />
-        <NodeLayout
-          Size="192,41.6"
-          Id="Package\Insert into Final Products table\Product final destination"
-          TopLeft="455.000007748604,138.411766647055" />
-        <EdgeLayout
-          Id="Package\Insert into Final Products table.Paths[OLE DB Source Output]"
-          TopLeft="547.114293560203,92.8352948362027">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.5764718108525"
-              Start="0,0"
-              End="0,38.0764718108525">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.0764718108525" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert into Final Products table\Products source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Insert into Final Products table\Product final destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
