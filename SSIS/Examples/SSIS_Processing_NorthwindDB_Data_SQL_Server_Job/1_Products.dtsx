@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="1_Products"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{B1719873-25CD-45A4-A2C1-1ADB50380517}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{8A44FF87-196D-4357-A534-D761D3F89512}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -55,22 +55,6 @@
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
-    <DTS:Executable
-      DTS:refId="Package\Execute SQL Task"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{AB5BC5BC-2DFE-4C93-B537-283F82580D4A}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Execute SQL Task"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Insert final execution package"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
@@ -629,13 +613,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Move Products from Northwind to new database"
+      DTS:refId="Package\Move Products from Northwind to processing database"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{92950C3B-0B74-4CA1-9DBE-5560FE19177B}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Move Products from Northwind to new database"
+      DTS:ObjectName="Move Products from Northwind to processing database"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -643,7 +627,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Move Products from Northwind to new database\PRODUCTS destination"
+              refId="Package\Move Products from Northwind to processing database\PRODUCTS destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -700,7 +684,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Connections[OleDbConnection]"
+                  refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[MAN.NORTHWIND_SSIS_Processing]"
                   connectionManagerRefId="Package.ConnectionManagers[MAN.NORTHWIND_SSIS_Processing]"
                   description="The OLE DB runtime connection used to access the database."
@@ -708,115 +692,115 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[ProductName]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[ProductName]"
                       cachedDataType="wstr"
                       cachedLength="40"
                       cachedName="ProductName"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ProductName]" />
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ProductName]" />
                     <inputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[SupplierID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[SupplierID]"
                       cachedDataType="i4"
                       cachedName="SupplierID"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[SupplierID]" />
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[SupplierID]" />
                     <inputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[CategoryID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[CategoryID]"
                       cachedDataType="i4"
                       cachedName="CategoryID"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryID]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[CategoryID]" />
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryID]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[CategoryID]" />
                     <inputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[QuantityPerUnit]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[QuantityPerUnit]"
                       cachedDataType="wstr"
                       cachedLength="20"
                       cachedName="QuantityPerUnit"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[QuantityPerUnit]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[QuantityPerUnit]" />
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[QuantityPerUnit]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[QuantityPerUnit]" />
                     <inputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
                       cachedDataType="cy"
                       cachedName="UnitPrice"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
                     <inputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[UnitsInStock]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[UnitsInStock]"
                       cachedDataType="i2"
                       cachedName="UnitsInStock"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsInStock]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsInStock]" />
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsInStock]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsInStock]" />
                     <inputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[UnitsOnOrder]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[UnitsOnOrder]"
                       cachedDataType="i2"
                       cachedName="UnitsOnOrder"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsOnOrder]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsOnOrder]" />
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsOnOrder]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsOnOrder]" />
                     <inputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[ReorderLevel]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[ReorderLevel]"
                       cachedDataType="i2"
                       cachedName="ReorderLevel"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[ReorderLevel]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ReorderLevel]" />
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[ReorderLevel]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ReorderLevel]" />
                     <inputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[Discontinued]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].Columns[Discontinued]"
                       cachedDataType="bool"
                       cachedName="Discontinued"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[Discontinued]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[Discontinued]" />
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[Discontinued]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[Discontinued]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductID]"
                       dataType="i4"
                       name="ProductID" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
                       dataType="wstr"
                       length="40"
                       name="ProductName" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[SupplierID]"
                       dataType="i4"
                       name="SupplierID" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[CategoryID]"
                       dataType="i4"
                       name="CategoryID" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[QuantityPerUnit]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[QuantityPerUnit]"
                       dataType="wstr"
                       length="20"
                       name="QuantityPerUnit" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
                       dataType="cy"
                       name="UnitPrice" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsInStock]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsInStock]"
                       dataType="i2"
                       name="UnitsInStock" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsOnOrder]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[UnitsOnOrder]"
                       dataType="i2"
                       name="UnitsOnOrder" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[ReorderLevel]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[ReorderLevel]"
                       dataType="i2"
                       name="ReorderLevel" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[Discontinued]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[Discontinued]"
                       dataType="bool"
                       name="Discontinued" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[PriceType]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input].ExternalColumns[PriceType]"
                       dataType="wstr"
                       length="50"
                       name="PriceType" />
@@ -825,22 +809,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -849,7 +833,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Move Products from Northwind to new database\PRODUCTS source"
+              refId="Package\Move Products from Northwind to processing database\PRODUCTS source"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -898,7 +882,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Move Products from Northwind to new database\PRODUCTS source.Connections[OleDbConnection]"
+                  refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[MAN.NORTHWIND]"
                   connectionManagerRefId="Package.ConnectionManagers[MAN.NORTHWIND]"
                   description="The OLE DB runtime connection used to access the database."
@@ -906,215 +890,215 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output]"
+                  refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ProductID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ProductID]"
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ProductID]"
                       name="ProductID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ProductName]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
                       length="40"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ProductName]"
                       name="ProductName"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[SupplierID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[SupplierID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[SupplierID]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[SupplierID]"
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[SupplierID]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[SupplierID]"
                       name="SupplierID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[CategoryID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[CategoryID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[CategoryID]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[CategoryID]"
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[CategoryID]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[CategoryID]"
                       name="CategoryID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[QuantityPerUnit]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[QuantityPerUnit]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[QuantityPerUnit]"
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[QuantityPerUnit]"
                       length="20"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[QuantityPerUnit]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[QuantityPerUnit]"
                       name="QuantityPerUnit"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
                       dataType="cy"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitPrice]"
                       name="UnitPrice"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsInStock]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsInStock]"
                       dataType="i2"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitsInStock]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsInStock]"
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitsInStock]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsInStock]"
                       name="UnitsInStock"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsOnOrder]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsOnOrder]"
                       dataType="i2"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitsOnOrder]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsOnOrder]"
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitsOnOrder]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[UnitsOnOrder]"
                       name="UnitsOnOrder"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ReorderLevel]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ReorderLevel]"
                       dataType="i2"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ReorderLevel]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ReorderLevel]"
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ReorderLevel]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[ReorderLevel]"
                       name="ReorderLevel"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[Discontinued]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[Discontinued]"
                       dataType="bool"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[Discontinued]"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[Discontinued]"
+                      externalMetadataColumnId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[Discontinued]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].Columns[Discontinued]"
                       name="Discontinued"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ProductID]"
                       dataType="i4"
                       name="ProductID" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
                       dataType="wstr"
                       length="40"
                       name="ProductName" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[SupplierID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[SupplierID]"
                       dataType="i4"
                       name="SupplierID" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[CategoryID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[CategoryID]"
                       dataType="i4"
                       name="CategoryID" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[QuantityPerUnit]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[QuantityPerUnit]"
                       dataType="wstr"
                       length="20"
                       name="QuantityPerUnit" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitPrice]"
                       dataType="cy"
                       name="UnitPrice" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitsInStock]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitsInStock]"
                       dataType="i2"
                       name="UnitsInStock" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitsOnOrder]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[UnitsOnOrder]"
                       dataType="i2"
                       name="UnitsOnOrder" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ReorderLevel]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[ReorderLevel]"
                       dataType="i2"
                       name="ReorderLevel" />
                     <externalMetadataColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[Discontinued]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output].ExternalColumns[Discontinued]"
                       dataType="bool"
                       name="Discontinued" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ProductID]"
                       dataType="i4"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ProductID]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ProductID]"
                       name="ProductID" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
                       dataType="wstr"
                       length="40"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ProductName]"
                       name="ProductName" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[SupplierID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[SupplierID]"
                       dataType="i4"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[SupplierID]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[SupplierID]"
                       name="SupplierID" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[CategoryID]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[CategoryID]"
                       dataType="i4"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[CategoryID]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[CategoryID]"
                       name="CategoryID" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[QuantityPerUnit]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[QuantityPerUnit]"
                       dataType="wstr"
                       length="20"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[QuantityPerUnit]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[QuantityPerUnit]"
                       name="QuantityPerUnit" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
                       dataType="cy"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitPrice]"
                       name="UnitPrice" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitsInStock]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitsInStock]"
                       dataType="i2"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitsInStock]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitsInStock]"
                       name="UnitsInStock" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitsOnOrder]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitsOnOrder]"
                       dataType="i2"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitsOnOrder]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[UnitsOnOrder]"
                       name="UnitsOnOrder" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ReorderLevel]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ReorderLevel]"
                       dataType="i2"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ReorderLevel]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ReorderLevel]"
                       name="ReorderLevel" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[Discontinued]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[Discontinued]"
                       dataType="bool"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[Discontinued]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[Discontinued]"
                       name="Discontinued" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1125,12 +1109,29 @@
           </components>
           <paths>
             <path
-              refId="Package\Move Products from Northwind to new database.Paths[OLE DB Source Output]"
-              endId="Package\Move Products from Northwind to new database\PRODUCTS destination.Inputs[OLE DB Destination Input]"
+              refId="Package\Move Products from Northwind to processing database.Paths[OLE DB Source Output]"
+              endId="Package\Move Products from Northwind to processing database\PRODUCTS destination.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Move Products from Northwind to new database\PRODUCTS source.Outputs[OLE DB Source Output]" />
+              startId="Package\Move Products from Northwind to processing database\PRODUCTS source.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Processing Products"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{e8152653-027a-4ba2-be62-a20b15caac21}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Processing Products"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0DAF5EA0-A00D-411B-9911-3D58985D6C9A}"
+          SQLTask:SqlStatementSource="exec sp_ProcessingProducts" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1174,15 +1175,15 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{F06FA8FC-1053-4E83-8074-8DAFCD88A987}"
-      DTS:From="Package\Move Products from Northwind to new database"
+      DTS:DTSID="{02A3E767-277A-4194-8EA4-0181C4FE5561}"
+      DTS:From="Package\Move Products from Northwind to processing database"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Processing Update Products price type" />
+      DTS:To="Package\Processing Products" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{E90FDDBB-109D-4B74-95CE-5CD55F7E6052}"
+      DTS:DTSID="{0BE9459F-6CAA-45B3-B7F9-E719C1E4B4AB}"
       DTS:From="Package\Processing Update Products price type"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1203,6 +1204,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Insert final execution package" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{4003749D-FCC4-4375-A6B7-57C9289D7B0A}"
+      DTS:From="Package\Processing Products"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Processing Update Products price type" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1217,87 +1226,39 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="523.571437487797,494.764712821241" />
-        <NodeLayout
           Size="220,42"
           Id="Package\Insert final execution package"
-          TopLeft="479.285722447902,407.588241010389" />
+          TopLeft="473.285722447902,499.588241010389" />
         <NodeLayout
           Size="223,42"
           Id="Package\Insert into Final Products table"
-          TopLeft="478.571436721452,320.411769199537" />
+          TopLeft="472.571436721452,412.411769199537" />
         <NodeLayout
-          Size="306,42"
-          Id="Package\Move Products from Northwind to new database"
-          TopLeft="435.714293134457,58.1176478739017" />
+          Size="337,42"
+          Id="Package\Move Products from Northwind to processing database"
+          TopLeft="418.714293134457,57.1176478739017" />
         <NodeLayout
           Size="259,42"
           Id="Package\Processing Update Products price type"
-          TopLeft="456.428579201504,144.529413791677" />
+          TopLeft="462.428579201504,238.529413791677" />
         <NodeLayout
           Size="214,42"
           Id="Package\Truncate Products table final"
-          TopLeft="487.142865438851,234.000003281762" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="587.271436167981,99.7176478739018">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,44.8117659177752"
-              Start="0,0"
-              End="0,37.3117659177752">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.3117659177752" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="589.985722320177,186.129413791677">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,47.8705894900851"
-              Start="0,0"
-              End="0,40.3705894900851">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,40.3705894900851" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="481.142865438851,326.000003281762" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="592.057151080151,275.600003281762">
+          TopLeft="586.107151080152,368.000003281762">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.8117659177747"
+              EndConnector="0,44.411765917775"
               Start="0,0"
-              End="0,37.3117659177747">
+              End="0,36.911765917775">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.3117659177747" />
+                    End="0,36.911765917775" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1308,7 +1269,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="589.728579584677,362.011769199537">
+          TopLeft="583.728579584677,454.011769199537">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1335,6 +1296,76 @@
           Size="242,40"
           Id="344add4d-f8ee-49c5-a214-9a5d3c9372e3"
           TopLeft="712.142869270578,483.294124425077" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Processing Products"
+          TopLeft="500,148" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="590.035722320177,280.529413791677">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.470589490085"
+              Start="0,0"
+              End="0,37.970589490085">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.970589490085" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="586.857146567228,99.1176478739017">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.8823521260983"
+              Start="0,0"
+              End="0,41.3823521260983">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.3823521260983" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="589.214289600752,190">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.529413791677"
+              Start="0,0"
+              End="0,41.029413791677">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.029413791677" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1342,7 +1373,7 @@
     design-time-name="Package\Insert into Final Products table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="153.6,41.6"
           Id="Package\Insert into Final Products table\Products source"
@@ -1370,7 +1401,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1403,20 +1436,20 @@
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Move Products from Northwind to new database">
+    design-time-name="Package\Move Products from Northwind to processing database">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="165.6,41.6"
-          Id="Package\Move Products from Northwind to new database\PRODUCTS source"
+          Id="Package\Move Products from Northwind to processing database\PRODUCTS source"
           TopLeft="482.857151080151,65.7647068046781" />
         <NodeLayout
           Size="186.4,41.6"
-          Id="Package\Move Products from Northwind to new database\PRODUCTS destination"
+          Id="Package\Move Products from Northwind to processing database\PRODUCTS destination"
           TopLeft="477.857150995002,154.470590401686" />
         <EdgeLayout
-          Id="Package\Move Products from Northwind to new database.Paths[OLE DB Source Output]"
+          Id="Package\Move Products from Northwind to processing database.Paths[OLE DB Source Output]"
           TopLeft="568.357151037576,107.364706804678">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1434,14 +1467,16 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Move Products from Northwind to new database\PRODUCTS destination">
+    design-time-name="Package\Move Products from Northwind to processing database\PRODUCTS destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1454,7 +1489,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Move Products from Northwind to new database\PRODUCTS source">
+    design-time-name="Package\Move Products from Northwind to processing database\PRODUCTS source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
