@@ -11,11 +11,23 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="22"
-  DTS:VersionGUID="{DFCF6B8B-D035-4089-8926-05B2DCB9A33B}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{A5CF19B7-836D-4D1A-B117-0F8E27660E2B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MAN.FINAL_NORTHWIND_PROCESSING_DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C961987B-144E-49D6-80EE-56038C272BDE}"
+      DTS:ObjectName="MAN.FINAL_NORTHWIND_PROCESSING_DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=MAN;Initial Catalog=FINAL_NORTHWIND_PROCESSING_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[MAN.NORTHWIND_SSIS_Processing]"
       DTS:CreationName="OLEDB"
@@ -69,7 +81,6 @@
       DTS:refId="Package\Execute SQL Task"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{219475EF-212E-4470-80EF-587D4D93527E}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
@@ -78,7 +89,10 @@
       DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
-        <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C961987B-144E-49D6-80EE-56038C272BDE}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="INSERT INTO [dbo].[PackageExecutionStatusHistory]&#xA;           ([PackageName]&#xA;           ,[DateTime]&#xA;           ,[ExecutedSuccesfully])&#xA;     VALUES&#xA;           ('Main_Package'&#xA;           ,CURRENT_TIMESTAMP&#xA;           ,1)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -121,7 +135,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate tables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -159,11 +173,11 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{8E961858-5EFB-4E12-A71D-D7973E9E7594}"
+      DTS:DTSID="{DC126BA8-B52B-459B-82F1-056FB0ACA21D}"
       DTS:From="Package\Execute Order Orders Details Package"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Send notification final" />
+      DTS:To="Package\Execute SQL Task" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -186,13 +200,17 @@
           Id="Package\Execute Products Package"
           TopLeft="469.285722277602,156.764708080919" />
         <NodeLayout
+          Size="163,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="493,411" />
+        <NodeLayout
           Size="203,42"
           Id="Package\Execute Suppliers Package"
           TopLeft="467.857150824703,243.176473998694" />
         <NodeLayout
           Size="180,42"
           Id="Package\Send notification final"
-          TopLeft="482.857151080151,412.176476368854" />
+          TopLeft="876.857151080151,461.176476368854" />
         <NodeLayout
           Size="151,42"
           Id="Package\Truncate tables"
@@ -263,20 +281,27 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="Main flow Northwind database"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="192,40"
+          Id="edd8867b-74f7-4d9a-bb00-28597530664e"
+          TopLeft="476.071436678877,17.3970590675165" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="574.400007918903,370.42353402339">
+          TopLeft="575.321432378827,370.82353402339">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.7529423454643"
+              EndConnector="0,40.17646597661"
               Start="0,0"
-              End="0,34.2529423454643">
+              End="0,32.67646597661">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.2529423454643" />
+                    End="0,32.67646597661" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -285,17 +310,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="Main flow Northwind database"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="192,40"
-          Id="edd8867b-74f7-4d9a-bb00-28597530664e"
-          TopLeft="476.071436678877,17.3970590675165" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Execute SQL Task"
-          TopLeft="536,541" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

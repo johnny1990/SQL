@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="1_Products"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{8A44FF87-196D-4357-A534-D761D3F89512}">
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{326350C6-9F6C-4D46-8BB9-4B9391872D9F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1238,6 +1238,10 @@
           Id="Package\Move Products from Northwind to processing database"
           TopLeft="418.714293134457,57.1176478739017" />
         <NodeLayout
+          Size="173,42"
+          Id="Package\Processing Products"
+          TopLeft="500,148" />
+        <NodeLayout
           Size="259,42"
           Id="Package\Processing Update Products price type"
           TopLeft="462.428579201504,238.529413791677" />
@@ -1245,6 +1249,50 @@
           Size="214,42"
           Id="Package\Truncate Products table final"
           TopLeft="481.142865438851,326.000003281762" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="586.857146567228,99.1176478739017">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.8823521260983"
+              Start="0,0"
+              End="0,41.3823521260983">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.3823521260983" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="590.035722320177,280.529413791677">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.470589490085"
+              Start="0,0"
+              End="0,37.970589490085">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.970589490085" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="586.107151080152,368.000003281762">
@@ -1289,61 +1337,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="to add Products new processing sql task"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="242,40"
-          Id="344add4d-f8ee-49c5-a214-9a5d3c9372e3"
-          TopLeft="712.142869270578,483.294124425077" />
-        <NodeLayout
-          Size="173,42"
-          Id="Package\Processing Products"
-          TopLeft="500,148" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="590.035722320177,280.529413791677">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,45.470589490085"
-              Start="0,0"
-              End="0,37.970589490085">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.970589490085" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="586.857146567228,99.1176478739017">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,48.8823521260983"
-              Start="0,0"
-              End="0,41.3823521260983">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.3823521260983" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="589.214289600752,190">
@@ -1366,6 +1359,13 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <AnnotationLayout
+          Text="to add Products new processing sql task"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="242,40"
+          Id="344add4d-f8ee-49c5-a214-9a5d3c9372e3"
+          TopLeft="712.142869270578,483.294124425077" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
