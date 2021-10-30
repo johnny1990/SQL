@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="2_Suppliers"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{1EDED935-F7CA-42E6-BB15-0A8C7DE83116}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{363A0577-A1F2-4DB9-8C79-22B29AAABAA7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1353,23 +1353,23 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="229,42"
+          Size="228.8,41.6"
           Id="Package\Insert status execution package"
           TopLeft="499,413" />
         <NodeLayout
-          Size="339,42"
+          Size="339.2,41.6"
           Id="Package\Move Suppliers from Northwind to processing database"
           TopLeft="431,53" />
         <NodeLayout
-          Size="231,42"
+          Size="231.2,41.6"
           Id="Package\Move suppliers to final database"
           TopLeft="495,324" />
         <NodeLayout
-          Size="174,42"
+          Size="174.4,41.6"
           Id="Package\Processing suppliers"
           TopLeft="517,141" />
         <NodeLayout
-          Size="193,42"
+          Size="192.8,41.6"
           Id="Package\Truncate Suppliers table"
           TopLeft="510,232" />
         <EdgeLayout
@@ -1568,7 +1568,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Move suppliers to final database\OLE DB Source">
+    design-time-name="Package\Move suppliers to final database\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1581,7 +1581,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Move suppliers to final database\OLE DB Destination">
+    design-time-name="Package\Move suppliers to final database\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
