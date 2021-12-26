@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="1_Products"
   DTS:PackageType="5"
-  DTS:VersionBuild="39"
-  DTS:VersionGUID="{326350C6-9F6C-4D46-8BB9-4B9391872D9F}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{DE81C75C-94E8-47A7-9464-5E0E6E7074C7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1359,13 +1359,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <AnnotationLayout
-          Text="to add Products new processing sql task"
-          ParentId="Package"
-          FontInfo="{assembly:Null}"
-          Size="242,40"
-          Id="344add4d-f8ee-49c5-a214-9a5d3c9372e3"
-          TopLeft="712.142869270578,483.294124425077" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{74CA0361-7244-4EEC-BA9C-C67FC7718B5B}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{4487A430-EA09-435D-B487-218028FB4707}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -113,19 +113,6 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Send notification final"
-      DTS:CreationName="Microsoft.SendMailTask"
-      DTS:Description="Send Mail Task"
-      DTS:DTSID="{B24E718A-3CA7-442A-B01D-73BBC250E736}"
-      DTS:ExecutableType="Microsoft.SendMailTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Send notification final"
-      DTS:TaskContact="Send Mail Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData />
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Truncate tables"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -177,14 +164,6 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
       DTS:To="Package\Execute SQL Task" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
-      DTS:CreationName=""
-      DTS:DTSID="{C9670E50-6AEF-4A22-9DE4-7CB46F6C9A8D}"
-      DTS:From="Package\Execute SQL Task"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Send notification final" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -214,10 +193,6 @@
           Size="203,42"
           Id="Package\Execute Suppliers Package"
           TopLeft="469.857150824703,229.176473998694" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\Send notification final"
-          TopLeft="487.857151080151,485.176476368854" />
         <NodeLayout
           Size="151,42"
           Id="Package\Truncate tables"
@@ -317,28 +292,6 @@
           Size="192,40"
           Id="edd8867b-74f7-4d9a-bb00-28597530664e"
           TopLeft="478.071436678877,3.3970590675165" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="577.178575540075,439">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46.176476368854"
-              Start="0,0"
-              End="0,38.676476368854">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.676476368854" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
