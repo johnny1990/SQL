@@ -67,6 +67,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SQL_Backup_Reporting", "SSI
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "SSIS_Processing_NorthwindDB_Data_SQL_Server_Job", "SSIS\Examples\SSIS_Processing_NorthwindDB_Data_SQL_Server_Job\SSIS_Processing_NorthwindDB_Data_SQL_Server_Job.dtproj", "{837EB288-FAD9-4D01-B0A4-07E9806F0CA7}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Extract_SSIS_Report_Data_Usage", "SSIS\Examples\Extract_SSIS_Report_Data_Usage\Extract_SSIS_Report_Data_Usage.dtproj", "{CA50663C-F08E-42BE-A952-891E6A0F20BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Default = Debug|Default
@@ -306,6 +308,14 @@ Global
 		{837EB288-FAD9-4D01-B0A4-07E9806F0CA7}.Development|Default.Build.0 = Development
 		{837EB288-FAD9-4D01-B0A4-07E9806F0CA7}.Release|Default.ActiveCfg = Development
 		{837EB288-FAD9-4D01-B0A4-07E9806F0CA7}.Release|Default.Build.0 = Development
+		{CA50663C-F08E-42BE-A952-891E6A0F20BF}.Debug|Default.ActiveCfg = Development
+		{CA50663C-F08E-42BE-A952-891E6A0F20BF}.Debug|Default.Build.0 = Development
+		{CA50663C-F08E-42BE-A952-891E6A0F20BF}.DebugLocal|Default.ActiveCfg = Development
+		{CA50663C-F08E-42BE-A952-891E6A0F20BF}.DebugLocal|Default.Build.0 = Development
+		{CA50663C-F08E-42BE-A952-891E6A0F20BF}.Development|Default.ActiveCfg = Development
+		{CA50663C-F08E-42BE-A952-891E6A0F20BF}.Development|Default.Build.0 = Development
+		{CA50663C-F08E-42BE-A952-891E6A0F20BF}.Release|Default.ActiveCfg = Development
+		{CA50663C-F08E-42BE-A952-891E6A0F20BF}.Release|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -340,6 +350,7 @@ Global
 		{214E0DA5-DB69-412C-A8FB-B17F40189E55} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{E648C32C-D712-4177-87B7-697C71992398} = {36D28996-5CC8-4ECF-8C90-394070543997}
 		{837EB288-FAD9-4D01-B0A4-07E9806F0CA7} = {36D28996-5CC8-4ECF-8C90-394070543997}
+		{CA50663C-F08E-42BE-A952-891E6A0F20BF} = {36D28996-5CC8-4ECF-8C90-394070543997}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F99E97C1-DDDC-4EF1-AEBE-DD4CBB7E9BF1}
